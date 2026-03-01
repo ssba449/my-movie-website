@@ -1,0 +1,96 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  String    @id @default(uuid())
+  email               String    @unique
+  name                String?
+  passwordHash        String?
+  avatarUrl           String?
+  language            String    @default("en")
+  stripeCustomerId    String?   @unique
+  subscriptionId      String?   @unique
+  subscriptionStatus  String?
+  subscriptionEndDate DateTime?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  favorites           Favorites[]
+  watchProgress       WatchProgress[]
+}
+
+model Content {
+  id              String    @id @default(uuid())
+  type            String
+  title           String
+  titleAr         String?
+  description     String?
+  descriptionAr   String?
+  posterUrl       String?
+  backdropUrl     String?
+  trailerUrl      String?
+  imdbId          String?   @unique
+  tmdbId          Int?      @unique
+  imdbRating      Float?
+  imdbVotes       String?
+  genre           String?
+  language        String?
+  releaseYear     String?
+  runtime         Int?
+  totalSeasons    Int?
+  director        String?
+  cast            String?
+  status          String    @default("available")
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  episodes        Episode[]
+  favorites       Favorites[]
+  watchProgress   WatchProgress[]
+}
+
+model Episode {
+  id              String    @id @default(uuid())
+  contentId       String
+  content         Content   @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  seasonNumber    Int?
+  episodeNumber   Int?
+  title           String
+  titleAr         String?
+  description     String?
+  videoUrl        String?
+  thumbnailUrl    String?
+  duration        Int?
+  airDate         DateTime?
+  isAvailable     Boolean   @default(true)
+  watchProgress   WatchProgress[]
+}
+
+model Favorites {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  contentId String
+  content   Content  @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  addedAt   DateTime @default(now())
+  @@unique([userId, contentId])
+}
+
+model WatchProgress {
+  id              String   @id @default(uuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  contentId       String
+  content         Content  @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  episodeId       String?
+  episode         Episode? @relation(fields: [episodeId], references: [id], onDelete: Cascade)
+  positionSeconds Int      @default(0)
+  durationSeconds Int      @default(0)
+  completedAt     DateTime?
+  updatedAt       DateTime @updatedAt
+  @@unique([userId, contentId, episodeId])
+}
