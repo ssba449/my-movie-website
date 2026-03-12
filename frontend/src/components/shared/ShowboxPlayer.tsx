@@ -403,6 +403,7 @@ export default function ShowboxPlayer({
                                 ref={videoRef}
                                 className="video-js vjs-big-play-centered w-full h-full object-contain animate-in fade-in duration-500"
                                 playsInline
+                                webkit-playsinline="true"
                                 crossOrigin="anonymous"
                                 onClick={togglePlay}
                             >
