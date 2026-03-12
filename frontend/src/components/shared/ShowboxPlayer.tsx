@@ -84,8 +84,9 @@ export default function ShowboxPlayer({
         // After 6 seconds update message
         const msgTimer = setTimeout(() => setProgressMsg("Loading Video"), 6000);
 
+        const apiBase = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
         // Change fetch from stream server directly to NextJS proxy API
-        fetch(`/api/play?id=${showboxId}&type=${showboxType}`)
+        fetch(`${apiBase}/api/play?id=${showboxId}&type=${showboxType}`)
             .then(r => {
                 if (!r.ok) throw new Error(`Server error ${r.status}`);
                 return r.json();
@@ -100,7 +101,7 @@ export default function ShowboxPlayer({
 
                 if (!data?.stream) throw new Error("No stream token received");
                 finishProgress();
-                const url = `/api${data.stream}`;
+                const url = data.stream;
                 savedUrl.current = url;
                 setTimeout(() => setStreamUrl(url), 300);
             })
@@ -147,7 +148,8 @@ export default function ShowboxPlayer({
             try {
                 // We add a cache-busting timestamp to prevent the browser from returning
                 // the old VTT response that might be aggressively cached
-                let subApi = `/api/subtitles?tmdbId=${tmdbId}&type=${type}&t=${Date.now()}`;
+                const apiBase = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
+                let subApi = `${apiBase}/api/subtitles?tmdbId=${tmdbId}&type=${type}&t=${Date.now()}`;
                 if (type === "series" && seasonNumber && episodeNumber) {
                     subApi += `&season=${seasonNumber}&episode=${episodeNumber}`;
                 }
@@ -237,7 +239,8 @@ export default function ShowboxPlayer({
             if (Math.abs(curr - lastReportedTime.current) >= 30 || (dur > 0 && curr >= dur * 0.95)) {
                 lastReportedTime.current = curr;
                 try {
-                    await fetch("/api/user/progress", {
+                    const apiBase = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
+                    await fetch(`${apiBase}/api/user/progress`, {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({

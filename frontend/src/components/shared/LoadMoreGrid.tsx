@@ -21,8 +21,10 @@ export default function LoadMoreGrid({ initialData, type, keyword }: LoadMoreGri
         setIsLoading(true);
 
         try {
-            const queryParam = keyword ? `&keyword=${encodeURIComponent(keyword)}` : "";
-            const res = await fetch(`/api/content?type=${type}&page=${page}&limit=60${queryParam}`);
+            const apiBase = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
+            const queryParam = keyword ? `&title=${encodeURIComponent(keyword)}` : "";
+            // Use search endpoint which reliably returns the list format
+            const res = await fetch(`${apiBase}/api/search?type=${type}&page=${page}&pagelimit=60${queryParam}`);
             const json = await res.json();
 
             if (json.success && json.data && json.data.length > 0) {

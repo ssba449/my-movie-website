@@ -57,8 +57,9 @@ export default function SeasonEpisodePicker({ showboxId, onEpisodePlay }: Season
             setLoadingSeasons(true);
             setError(null);
             try {
+                const apiBase = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
                 const isUUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(showboxId);
-                const url = isUUID ? `/api/content/seasons?showId=${showboxId}` : `/api/series/seasons?id=${showboxId}`;
+                const url = isUUID ? `${apiBase}/api/content/seasons?showId=${showboxId}` : `${apiBase}/api/series/seasons?id=${showboxId}`;
                 const res = await fetch(url);
                 if (!res.ok) throw new Error("Failed to load seasons");
                 const data = await res.json();
@@ -90,11 +91,12 @@ export default function SeasonEpisodePicker({ showboxId, onEpisodePlay }: Season
             setLoadingEpisodes(true);
             setEpisodes([]);
             try {
+                const apiBase = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
                 const seasonFid = season.fid || 0;
                 const isDB = shareKey === "db";
                 const url = isDB
-                    ? `/api/content/episodes?seasonFid=${seasonFid}`
-                    : `/api/series/episodes?shareKey=${shareKey}&seasonFid=${seasonFid}`;
+                    ? `${apiBase}/api/content/episodes?seasonFid=${seasonFid}`
+                    : `${apiBase}/api/series/episodes?shareKey=${shareKey}&seasonFid=${seasonFid}`;
                 const res = await fetch(url);
                 if (!res.ok) throw new Error("Failed to load episodes");
                 const data = await res.json();
@@ -119,14 +121,15 @@ export default function SeasonEpisodePicker({ showboxId, onEpisodePlay }: Season
 
             if (shareKey === "db" && ep.streamUrl) {
                 if (ep.streamUrl.startsWith("febbox://")) {
+                    const apiBase = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
                     const [sk, fileFid] = ep.streamUrl.replace("febbox://", "").split("/");
-                    const res = await fetch(`/api/play/episode?shareKey=${sk}&fid=${fileFid}`);
+                    const res = await fetch(`${apiBase}/api/play/episode?shareKey=${sk}&fid=${fileFid}`);
                     const data = await res.json();
                     if (!res.ok || data.hint === "use_embed_fallback") {
                         throw new Error(data.error || "Episode stream unavailable. CDN link could not be extracted.");
                     }
                     if (data.type === 'stream' && data.stream) {
-                        streamUrl = `/api${data.stream}`;
+                        streamUrl = data.stream;
                     } else {
                         throw new Error("No stream token received for db-linked episode");
                     }
@@ -134,7 +137,8 @@ export default function SeasonEpisodePicker({ showboxId, onEpisodePlay }: Season
                     streamUrl = ep.streamUrl;
                 }
             } else {
-                const res = await fetch(`/api/play/episode?shareKey=${shareKey}&fid=${ep.fid}`);
+                const apiBase = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
+                const res = await fetch(`${apiBase}/api/play/episode?shareKey=${shareKey}&fid=${ep.fid}`);
                 const data = await res.json();
                 // Handle embed fallback hint (CDN extraction failed server-side)
                 if (data.hint === "use_embed_fallback") {
@@ -145,7 +149,7 @@ export default function SeasonEpisodePicker({ showboxId, onEpisodePlay }: Season
                     throw new Error(data.error || `Server error ${res.status}`);
                 }
                 if (data.type === 'stream' && data.stream) {
-                    streamUrl = `/api${data.stream}`;
+                    streamUrl = data.stream;
                 } else {
                     throw new Error("No stream token received for episode");
                 }

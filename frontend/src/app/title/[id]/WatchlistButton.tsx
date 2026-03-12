@@ -25,7 +25,8 @@ export default function WatchlistButton({ contentId, type, initialIsFavorite, is
 
         setIsLoading(true);
         try {
-            const res = await fetch("/api/user/favorites", {
+            const apiBase = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
+            const res = await fetch(`${apiBase}/api/user/favorites`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -53,8 +54,8 @@ export default function WatchlistButton({ contentId, type, initialIsFavorite, is
             onClick={handleToggle}
             disabled={isLoading}
             className={`h-[52px] w-[52px] p-0 rounded-full transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] hover:scale-105 active:scale-95 border ${isFavorite
-                    ? "bg-white text-black border-white hover:bg-white/90"
-                    : "bg-white/10 text-white border-white/10 hover:bg-white/20"
+                ? "bg-white text-black border-white hover:bg-white/90"
+                : "bg-white/10 text-white border-white/10 hover:bg-white/20"
                 }`}
             title={isFavorite ? "Remove from List" : "Add to List"}
         >
