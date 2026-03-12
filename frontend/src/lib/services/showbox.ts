@@ -1,6 +1,6 @@
 import { db } from "../db";
 
-const API_BASE = (process.env.NEXT_PUBLIC_API_BASE || "http://127.0.0.1:3000").replace(/\/$/, "");
+const API_BASE = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
 export const SHOWBOX_API_URL = `${API_BASE}/api`;
 const STREAM_SERVER = `${API_BASE}/stream-server`;
 

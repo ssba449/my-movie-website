@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
     if (!shareKey || !seasonFid) return NextResponse.json({ error: "Missing shareKey or seasonFid" }, { status: 400 });
 
     try {
-        const backendUrl = process.env.NEXT_PUBLIC_API_BASE || "http://127.0.0.1:3000";
+        const backendUrl = process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com";
         const res = await fetch(`${backendUrl}/stream-server/api/series/episodes?shareKey=${shareKey}&seasonFid=${seasonFid}`, { cache: "no-store" });
         const data = await res.json();
         return NextResponse.json(data);
