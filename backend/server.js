@@ -1,5 +1,6 @@
 // Unified Backend Gateway - Updated: 2026-03-12 04:58 AM
 import express from 'express';
+import cors from 'cors';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import { spawn } from 'child_process';
 import path from 'path';
@@ -9,6 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 3000;
 const API_PORT = process.env.API_PORT || 3001;
 const STREAM_PORT = process.env.STREAM_PORT || 4000;
