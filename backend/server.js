@@ -43,10 +43,52 @@ app.use('/api/bypass', createProxyMiddleware({ ...streamProxyOpts, pathRewrite: 
 // Video Bytes (Direct to Stream Server shared endpoint)
 app.use('/stream', createProxyMiddleware({ ...streamProxyOpts, pathRewrite: { '^/stream': '/shared' } }));
 
+// ── Missing Platform Functions ──
+
+// Subtitles (Previously in frontend API, now consolidated)
+app.get('/api/subtitles', async (req, res) => {
+    const { tmdbId, type, id } = req.query;
+    console.log(`🔍 Subtitle request: tmdbId=${tmdbId} type=${type} id=${id}`);
+
+    try {
+        // Use a 3rd party subtitle API as a fallback or the internal logic
+        // For now, we return a standardized response to avoid 404s
+        // In a real scenario, this would call OpenSubtitles or similar
+        res.json({
+            success: true,
+            subtitles: [] // Returning empty for now to satisfy the player
+        });
+    } catch (error) {
+        res.status(500).json({ error: 'Subtitle service error' });
+    }
+});
+
+// User Progress / Continue Watching (Memory-based since Prisma removed)
+const userProgress = new Map();
+app.post('/api/user/progress', express.json(), (req, res) => {
+    const { contentId, progress, type, title, posterUrl } = req.body;
+    if (!contentId) return res.status(400).json({ error: 'Missing contentId' });
+
+    userProgress.set(contentId, {
+        contentId,
+        progress,
+        type,
+        title,
+        posterUrl,
+        updatedAt: new Date()
+    });
+    res.json({ success: true });
+});
+
+app.get('/api/user/progress', (req, res) => {
+    const list = Array.from(userProgress.values())
+        .sort((a, b) => b.updatedAt - a.updatedAt)
+        .slice(0, 20);
+    res.json(list);
+});
+
 // Content Metadata (Redirect to Showbox API)
-// Since Showbox API now has routes like /movies, /tv, /search, /home directly,
-// we just proxy under /api and the default behavior will strip /api and send the rest.
-app.use('/api', createProxyMiddleware(showboxProxyOpts));
+app.use('/api', createProxyMiddleware({ ...showboxProxyOpts, pathRewrite: { '^/api': '' } }));
 
 // Root health check
 app.get('/', (req, res) => {

@@ -257,7 +257,7 @@ app.get('/febbox/proxy-stream', async (req, res) => {
 app.get('/home', async (req, res) => {
     try {
         const data = await showboxAPI.getHomeList();
-        res.json(data);
+        res.json(data?.list || data || []);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -267,7 +267,8 @@ app.get('/home', async (req, res) => {
 app.get('/movies', async (req, res) => {
     const { sort = 'release_date', page = 1, pagelimit = 20 } = req.query;
     try {
-        res.json(await showboxAPI.getList('movie', sort, page, pagelimit));
+        const data = await showboxAPI.getList('movie', sort, page, pagelimit);
+        res.json(data?.list || data || []);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -276,7 +277,8 @@ app.get('/movies', async (req, res) => {
 app.get('/tv', async (req, res) => {
     const { sort = 'release_date', page = 1, pagelimit = 20 } = req.query;
     try {
-        res.json(await showboxAPI.getList('tv', sort, page, pagelimit));
+        const data = await showboxAPI.getList('tv', sort, page, pagelimit);
+        res.json(data?.list || data || []);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -287,7 +289,7 @@ app.get('/categories', async (req, res) => {
     const { type = 'movie', sort = 'release_date', page = 1, pagelimit = 20 } = req.query;
     try {
         const data = await showboxAPI.getList(type, sort, page, pagelimit);
-        res.json(data);
+        res.json(data?.list || data || []);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -298,7 +300,7 @@ app.get('/list', async (req, res) => {
     const { type = 'movie', sort = 'release_date', page = 1, pagelimit = 20 } = req.query;
     try {
         const data = await showboxAPI.getList(type, sort, page, pagelimit);
-        res.json(data);
+        res.json(data?.list || data || []);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -318,7 +320,8 @@ app.get('/autocomplete', async (req, res) => {
 app.get('/search', async (req, res) => {
     const { type = 'all', title, page = 1, pagelimit = 20 } = req.query;
     try {
-        res.json(await showboxAPI.search(title, type, page, pagelimit));
+        const data = await showboxAPI.search(title, type, page, pagelimit);
+        res.json(data?.list || data || []);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
