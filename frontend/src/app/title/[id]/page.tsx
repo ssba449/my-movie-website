@@ -12,19 +12,7 @@ import TitleTabsManager from "@/components/detail/TitleTabsManager";
 import TitleStickyHeader from "@/components/detail/TitleStickyHeader";
 import ShowboxPlayer from "@/components/shared/ShowboxPlayer";
 
-// Helper for mapping "more like this"
-function mapShowboxToContent(items: any[], typeFallback: "movie" | "series" = "movie") {
-    if (!items || !Array.isArray(items)) return [];
-    return items.map((item) => ({
-        id: item.id?.toString(),
-        title: item.title || item.display_title || "Unknown Title",
-        posterUrl: item.poster || item.poster_min,
-        imdbRating: item.rating || (item.imdb_rating ? item.imdb_rating.toString() : undefined),
-        year: item.year ? item.year.toString() : undefined,
-        genre: item.genre,
-        type: item.box_type === 1 ? "movie" : item.box_type === 2 ? "series" : typeFallback,
-    }));
-}
+import { mapShowboxToContent } from "@/lib/utils/showbox-mapper";
 
 export default async function TitleDetail({
     params,

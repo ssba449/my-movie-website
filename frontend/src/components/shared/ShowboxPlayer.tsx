@@ -102,7 +102,9 @@ export default function ShowboxPlayer({
 
                 if (!data?.stream) throw new Error("No stream token received");
                 finishProgress();
-                const url = data.stream;
+
+                // Ensure absolute URL for stream
+                const url = data.stream.startsWith('http') ? data.stream : `${apiBase}${data.stream}`;
                 savedUrl.current = url;
                 setTimeout(() => setStreamUrl(url), 300);
             })

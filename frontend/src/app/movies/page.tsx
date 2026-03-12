@@ -2,11 +2,12 @@ export const dynamic = 'force-dynamic';
 
 import LoadMoreGrid from "@/components/shared/LoadMoreGrid";
 import { getShowboxTrending } from "@/lib/services/showbox";
+import { mapShowboxToContent } from "@/lib/utils/showbox-mapper";
 
 export default async function MoviesPage() {
 
     const rawMovies = await getShowboxTrending("movie", 60);
-    const movies = rawMovies?.list || rawMovies || [];
+    const movies = mapShowboxToContent(rawMovies?.list || rawMovies || [], "movie");
 
     return (
         <div className="min-h-screen bg-transparent pt-32 pb-32">

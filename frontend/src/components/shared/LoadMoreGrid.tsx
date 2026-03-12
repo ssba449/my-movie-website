@@ -3,6 +3,7 @@
 import { useState } from "react";
 import ContentCard from "./ContentCard";
 import { Loader2 } from "lucide-react";
+import { mapShowboxToContent } from "@/lib/utils/showbox-mapper";
 
 interface LoadMoreGridProps {
     initialData: any[];
@@ -31,27 +32,16 @@ export default function LoadMoreGrid({ initialData, type, keyword }: LoadMoreGri
             const rawItems = json?.list || (Array.isArray(json) ? json : []);
 
             if (rawItems && rawItems.length > 0) {
-                // Determine if we should stop. If we asked for 60 and got less, we're likely at the end.
-                if (rawItems.length < 60) {
-                    setHasMore(false);
-                }
+                // Determine if we should stop
+                if (rawItems.length < 60) setHasMore(false);
+
+                const mappedNewItems = mapShowboxToContent(rawItems, type === "tv" ? "series" : "movie");
 
                 // Append new unique items
                 setItems(prevItems => {
                     const existingIds = new Set(prevItems.map(i => i.id?.toString()));
-                    const newItems = rawItems
-                        .filter((i: any) => !existingIds.has(i.id?.toString()))
-                        .map((i: any) => ({
-                            id: i.id?.toString(),
-                            title: i.title || i.display_title || "Unknown Title",
-                            posterUrl: i.poster || i.poster_min || "",
-                            imdbRating: i.rating || (i.imdb_rating ? i.imdb_rating.toString() : 0),
-                            genre: i.genre || "",
-                            year: i.year || (i.releaseYear ? i.releaseYear.toString() : undefined),
-                            runtime: i.runtime || 0,
-                            type: i.type || (i.box_type === 2 ? "tv" : i.box_type === 1 ? "movie" : type)
-                        }));
-                    return [...prevItems, ...newItems];
+                    const uniqueNewItems = mappedNewItems.filter(i => !existingIds.has(i.id));
+                    return [...prevItems, ...uniqueNewItems];
                 });
 
                 setPage(prev => prev + 1);
