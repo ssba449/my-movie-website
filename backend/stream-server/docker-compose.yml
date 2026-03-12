@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  stream-server:
+    build: .
+    ports:
+      - "4000:4000"
+    depends_on:
+      - flaresolverr
+    environment:
+      - FLARESOLVERR_URL=http://flaresolverr:8191/v1
+      - PORT=4000
+
+  flaresolverr:
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    ports:
+      - "8191:8191"
+    environment:
+      - LOG_LEVEL=info

@@ -1,0 +1,1646 @@
+{
+  "id": 19173,
+  "mb_id": 0,
+  "title": "The Platform",
+  "vip_only": 0,
+  "display": 1,
+  "state": 1,
+  "source_file": 1,
+  "code_file": 1,
+  "director": "Galder Gaztelu-Urrutia",
+  "writer": "David Desola, Pedro Rivero",
+  "actors": "Emilio Buale, Zorion Eguileor, Alexandra Masangkay, Ivan Massagué, Antonia San Juan",
+  "runtime": 94,
+  "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjUvMTAvMDcvMjAyNTEwMDcwNTQ1NDQzNDE4Mi5qcGd8NTAwfDc0.png",
+  "poster_imdb": 0,
+  "description": "A slab of food descends down a vertical facility. The residents above eat heartily, leaving those below starving and desperate. A rebellion is imminent.",
+  "cats": "sci-fi,thriller",
+  "year": 2019,
+  "imdb_id": "tt8228288",
+  "imdb_rating": "7",
+  "trailer": "[{\"key\":\"Bsyicj2qdqs\",\"img\":\"https:\\/\\/i.ytimg.com\\/vi\\/Bsyicj2qdqs\\/hqdefault.jpg\"},{\"key\":\"Ez0rXJfjnsc\",\"img\":\"https:\\/\\/i.ytimg.com\\/vi\\/Ez0rXJfjnsc\\/hqdefault.jpg\"},{\"key\":\"RlfooqeZcdY\",\"img\":\"https:\\/\\/i.ytimg.com\\/vi\\/RlfooqeZcdY\\/hqdefault.jpg\"}]",
+  "recommend": [
+    {
+      "mid": 448,
+      "title": "Back to the Future",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxMDMyMjY4MzEyNS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/12/2018071210322683125.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxMDMyMjY4MzEyNS5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, blu-ray, dolby",
+      "imdb_rating": "8.5",
+      "audio_lang": "eng",
+      "runtime": 116,
+      "cats": "adventure,comedy,sci-fi",
+      "year": 1985,
+      "3d": 0
+    },
+    {
+      "mid": 4057,
+      "title": "Forrest Gump",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjEvMDcvMTMvMjAyMTA3MTMwNzI1MzQyOTE3NC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2021/07/13/2021071307253429174.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjEvMDcvMTMvMjAyMTA3MTMwNzI1MzQyOTE3NC5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "8.8",
+      "audio_lang": "eng",
+      "runtime": 142,
+      "cats": "drama,romance",
+      "year": 1994,
+      "3d": 0
+    },
+    {
+      "mid": 5776,
+      "title": "The Shawshank Redemption",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTYvMjAxODA3MTYwODIwMDE0Mjc4My5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/16/2018071608200142783.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTYvMjAxODA3MTYwODIwMDE0Mjc4My5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "9.3",
+      "audio_lang": "eng",
+      "runtime": 142,
+      "cats": "crime,drama",
+      "year": 1994,
+      "3d": 0
+    },
+    {
+      "mid": 3701,
+      "title": "Titanic",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTMvMjAxODA3MTMwNDIxMzExOTU4Mi5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/13/2018071304213119582.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTMvMjAxODA3MTMwNDIxMzExOTU4Mi5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "8",
+      "audio_lang": "eng",
+      "runtime": 194,
+      "cats": "adventure,drama,history",
+      "year": 1997,
+      "3d": 0
+    },
+    {
+      "mid": 4144,
+      "title": "Cube",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTcvMjAxODA3MTcyMDA2MTg2MDI1NS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/17/2018071720061860255.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTcvMjAxODA3MTcyMDA2MTg2MDI1NS5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "7.1",
+      "audio_lang": "eng",
+      "runtime": 90,
+      "cats": "horror,mystery,sci-fi",
+      "year": 1997,
+      "3d": 0
+    },
+    {
+      "mid": 4056,
+      "title": "The Dark Knight",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjEvMDQvMDIvMjAyMTA0MDIwMzMzMDQ1NDM1NC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2021/04/02/2021040203330454354.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjEvMDQvMDIvMjAyMTA0MDIwMzMzMDQ1NDM1NC5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "9.1",
+      "audio_lang": "eng",
+      "runtime": 152,
+      "cats": "action,crime,drama,thriller",
+      "year": 2008,
+      "3d": 0
+    },
+    {
+      "mid": 1660,
+      "title": "Interstellar",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxNjIxMTg4NzU1NS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/12/2018071216211887555.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxNjIxMTg4NzU1NS5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "8.7",
+      "audio_lang": "eng,fre,ger,ita,por,spa,cze,pol,rus,jpn",
+      "runtime": 169,
+      "cats": "adventure,sci-fi",
+      "year": 2014,
+      "3d": 0
+    },
+    {
+      "mid": 1665,
+      "title": "The Wolf of Wall Street",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxNjIxMTk5MTU5OC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/12/2018071216211991598.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxNjIxMTk5MTU5OC5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "8.2",
+      "audio_lang": "eng",
+      "runtime": 180,
+      "cats": "biography,crime,drama",
+      "year": 2013,
+      "3d": 0
+    },
+    {
+      "mid": 23205,
+      "title": "The Invisible Man",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDEvMTQvMjAyMDAxMTQwMzIyMDQ0Njc3MC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/01/14/2020011403220446770.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDEvMTQvMjAyMDAxMTQwMzIyMDQ0Njc3MC5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "7.1",
+      "audio_lang": "eng",
+      "runtime": 124,
+      "cats": "horror,sci-fi,thriller",
+      "year": 2020,
+      "3d": 0
+    },
+    {
+      "mid": 50342,
+      "title": "Amigo",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjIvMDcvMjMvMjAyMjA3MjMxNDA2MDUyMzIyNS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2022/07/23/2022072314060523225.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjIvMDcvMjMvMjAyMjA3MjMxNDA2MDUyMzIyNS5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "5.9",
+      "audio_lang": "",
+      "runtime": 83,
+      "cats": "comedy,drama,horror",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 31735,
+      "title": "The Vigil",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMTEvMjcvMjAyMDExMjcwNTAyMDQ0OTg4MS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/11/27/2020112705020449881.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMTEvMjcvMjAyMDExMjcwNTAyMDQ0OTg4MS5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "5.8",
+      "audio_lang": "eng",
+      "runtime": 89,
+      "cats": "horror,mystery,thriller",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 25075,
+      "title": "Ultras",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDMvMjkvMjAyMDAzMjkxMjAxMDY2NTM5Ny5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/03/29/2020032912010665397.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDMvMjkvMjAyMDAzMjkxMjAxMDY2NTM5Ny5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, blu-ray, dolby",
+      "imdb_rating": "6.2",
+      "audio_lang": "ita",
+      "runtime": 108,
+      "cats": "drama",
+      "year": 2020,
+      "3d": 0
+    },
+    {
+      "mid": 3738,
+      "title": "The Cabin in the Woods",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTMvMjAxODA3MTMwNDIyMTMxNTM3Ni5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/13/2018071304221315376.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTMvMjAxODA3MTMwNDIyMTMxNTM3Ni5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "7",
+      "audio_lang": "eng",
+      "runtime": 95,
+      "cats": "horror,sci-fi,thriller",
+      "year": 2011,
+      "3d": 0
+    },
+    {
+      "mid": 20505,
+      "title": "The Irishman",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTEvMDgvMjAxOTExMDgwMTI3MDQxNzExNS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/11/08/2019110801270417115.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTEvMDgvMjAxOTExMDgwMTI3MDQxNzExNS5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, blu-ray, dolby",
+      "imdb_rating": "7.8",
+      "audio_lang": "eng,rus",
+      "runtime": 209,
+      "cats": "biography,crime,drama",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 4059,
+      "title": "Inception",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTMvMjAxODA3MTMwODIxMDI5MjE2My5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/13/2018071308210292163.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTMvMjAxODA3MTMwODIxMDI5MjE2My5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, blu-ray, dolby",
+      "imdb_rating": "8.8",
+      "audio_lang": "eng",
+      "runtime": 148,
+      "cats": "action,adventure,sci-fi,thriller",
+      "year": 2010,
+      "3d": 0
+    },
+    {
+      "mid": 1037,
+      "title": "Mad Max - Fury Road",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxMjI0MTkyMTYyOS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/12/2018071212241921629.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxMjI0MTkyMTYyOS5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "8.1",
+      "audio_lang": "eng",
+      "runtime": 120,
+      "cats": "action,adventure,sci-fi",
+      "year": 2015,
+      "3d": 0
+    },
+    {
+      "mid": 203,
+      "title": "It",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMTIvMDMvMjAxODEyMDMwNzM0MjMxNjc1MS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/12/03/2018120307342316751.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMTIvMDMvMjAxODEyMDMwNzM0MjMxNjc1MS5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, blu-ray, dolby",
+      "imdb_rating": "7.3",
+      "audio_lang": "eng",
+      "runtime": 135,
+      "cats": "drama,horror,thriller",
+      "year": 2017,
+      "3d": 0
+    },
+    {
+      "mid": 265,
+      "title": "The Conjuring",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxMDI0MTgxOTg1MC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/12/2018071210241819850.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxMDI0MTgxOTg1MC5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "7.5",
+      "audio_lang": "eng,fre",
+      "runtime": 112,
+      "cats": "horror,thriller",
+      "year": 2013,
+      "3d": 0
+    },
+    {
+      "mid": 4325,
+      "title": "Contagion",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTMvMjAxODA3MTMxMjIwMDgzNTYwOS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/13/2018071312200835609.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTMvMjAxODA3MTMxMjIwMDgzNTYwOS5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray",
+      "imdb_rating": "6.8",
+      "audio_lang": "eng",
+      "runtime": 106,
+      "cats": "drama,sci-fi,thriller",
+      "year": 2011,
+      "3d": 0
+    },
+    {
+      "mid": 3366,
+      "title": "Snowpiercer",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTMvMjAxODA3MTMwNDIwMDg5Mjk1Mi5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/13/2018071304200892952.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTMvMjAxODA3MTMwNDIwMDg5Mjk1Mi5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "7.1",
+      "audio_lang": "eng",
+      "runtime": 126,
+      "cats": "action,drama,sci-fi",
+      "year": 2013,
+      "3d": 0
+    },
+    {
+      "mid": 13099,
+      "title": "Black Panther",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDMvMjEvMjAxOTAzMjExMTI3MDQ4NTY4Ny5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/03/21/2019032111270485687.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDMvMjEvMjAxOTAzMjExMTI3MDQ4NTY4Ny5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "7.3",
+      "audio_lang": "eng",
+      "runtime": 134,
+      "cats": "action,adventure,sci-fi",
+      "year": 2018,
+      "3d": 0
+    },
+    {
+      "mid": 1663,
+      "title": "Gone Girl",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxNjIxMTk2MDIzNC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/12/2018071216211960234.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxNjIxMTk2MDIzNC5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, blu-ray, dolby",
+      "imdb_rating": "8.1",
+      "audio_lang": "eng",
+      "runtime": 149,
+      "cats": "drama,mystery,thriller",
+      "year": 2014,
+      "3d": 0
+    },
+    {
+      "mid": 19174,
+      "title": "Jojo Rabbit",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDkvMjkvMjAxOTA5MjkwNTUyMDQ2NTExMS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/09/29/2019092905520465111.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDkvMjkvMjAxOTA5MjkwNTUyMDQ2NTExMS5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "7.9",
+      "audio_lang": "eng",
+      "runtime": 108,
+      "cats": "comedy,drama,war",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 25504,
+      "title": "Sea Fever",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDQvMTAvMjAyMDA0MTAxOTA0MjE5NDg5OS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/04/10/2020041019042194899.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDQvMTAvMjAyMDA0MTAxOTA0MjE5NDg5OS5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "5.7",
+      "audio_lang": "eng",
+      "runtime": 89,
+      "cats": "horror,sci-fi",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 6695,
+      "title": "Bird Box",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDIvMjAvMjAxOTAyMjAxNTUzMzUxMjkzMC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/02/20/2019022015533512930.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDIvMjAvMjAxOTAyMjAxNTUzMzUxMjkzMC5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "6.6",
+      "audio_lang": "eng",
+      "runtime": 124,
+      "cats": "horror,mystery,sci-fi",
+      "year": 2018,
+      "3d": 0
+    },
+    {
+      "mid": 57,
+      "title": "Annihilation",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIwOTU2MTIxMjcyMy5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/12/2018071209561212723.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIwOTU2MTIxMjcyMy5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "6.8",
+      "audio_lang": "eng",
+      "runtime": 115,
+      "cats": "adventure,drama,fantasy",
+      "year": 2018,
+      "3d": 0
+    },
+    {
+      "mid": 23675,
+      "title": "Lost Girls",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDIvMDQvMjAyMDAyMDQwMzQ4MDQxNDA2MS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/02/04/2020020403480414061.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDIvMDQvMjAyMDAyMDQwMzQ4MDQxNDA2MS5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "6.2",
+      "audio_lang": "eng",
+      "runtime": 95,
+      "cats": "drama,mystery,thriller",
+      "year": 2020,
+      "3d": 0
+    },
+    {
+      "mid": 21286,
+      "title": "Circle",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTIvMDMvMjAxOTEyMDMyMjU3MTQ0MDUxOC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/12/03/2019120322571440518.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTIvMDMvMjAxOTEyMDMyMjU3MTQ0MDUxOC5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "6",
+      "audio_lang": "eng",
+      "runtime": 87,
+      "cats": "drama,horror,mystery,sci-fi,thriller",
+      "year": 2015,
+      "3d": 0
+    },
+    {
+      "mid": 13970,
+      "title": "Avengers: Endgame",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDUvMjIvMjAxOTA1MjIyMjA0MDU1MjcxNC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/05/22/2019052222040552714.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDUvMjIvMjAxOTA1MjIyMjA0MDU1MjcxNC5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "8.4",
+      "audio_lang": "eng,fre,spa",
+      "runtime": 181,
+      "cats": "action,adventure,sci-fi",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 431,
+      "title": "Don't Breathe",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjEvMDgvMTcvMjAyMTA4MTcwNDIwMzUzOTM1NC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2021/08/17/2021081704203539354.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjEvMDgvMTcvMjAyMTA4MTcwNDIwMzUzOTM1NC5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "7.1",
+      "audio_lang": "eng",
+      "runtime": 88,
+      "cats": "crime,horror,thriller",
+      "year": 2016,
+      "3d": 0
+    },
+    {
+      "mid": 13273,
+      "title": "Contratiempo",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDQvMDYvMjAxOTA0MDYxMzA0MTM2MTY5Ny5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/04/06/2019040613041361697.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDQvMDYvMjAxOTA0MDYxMzA0MTM2MTY5Ny5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "8",
+      "audio_lang": "spa",
+      "runtime": 106,
+      "cats": "crime,mystery,thriller",
+      "year": 2016,
+      "3d": 0
+    },
+    {
+      "mid": 486,
+      "title": "Split",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxMDMzMjEzMzU3Ni5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/12/2018071210332133576.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxMDMzMjEzMzU3Ni5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "7.3",
+      "audio_lang": "eng",
+      "runtime": 117,
+      "cats": "horror,thriller",
+      "year": 2016,
+      "3d": 0
+    },
+    {
+      "mid": 434,
+      "title": "Hush",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxMDMyMTk3MTI2Ni5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/12/2018071210321971266.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxMDMyMTk3MTI2Ni5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "6.6",
+      "audio_lang": "eng",
+      "runtime": 81,
+      "cats": "horror,thriller",
+      "year": 2016,
+      "3d": 0
+    },
+    {
+      "mid": 293,
+      "title": "Get Out",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxMDI1MjIyNDQwOS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/12/2018071210252224409.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIxMDI1MjIyNDQwOS5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "7.8",
+      "audio_lang": "eng",
+      "runtime": 104,
+      "cats": "horror,mystery",
+      "year": 2017,
+      "3d": 0
+    },
+    {
+      "mid": 23259,
+      "title": "Color Out of Space",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDEvMTgvMjAyMDAxMTgwMjU2MDQ4OTUxMy5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/01/18/2020011802560489513.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDEvMTgvMjAyMDAxMTgwMjU2MDQ4OTUxMy5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "6.1",
+      "audio_lang": "eng",
+      "runtime": 111,
+      "cats": "horror,sci-fi",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 10229,
+      "title": "Train to Busan",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMTIvMjUvMjAxODEyMjUwMDA4Mzk2OTgyMy5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/12/25/2018122500083969823.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMTIvMjUvMjAxODEyMjUwMDA4Mzk2OTgyMy5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray",
+      "imdb_rating": "7.6",
+      "audio_lang": "kor,ita,eng",
+      "runtime": 118,
+      "cats": "action,drama,horror,thriller",
+      "year": 2016,
+      "3d": 0
+    },
+    {
+      "mid": 20514,
+      "title": "Uncut Gems",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTEvMDgvMjAxOTExMDgwMTMzMDMyMzk1Ny5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/11/08/2019110801330323957.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTEvMDgvMjAxOTExMDgwMTMzMDMyMzk1Ny5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "7.4",
+      "audio_lang": "eng,ger",
+      "runtime": 135,
+      "cats": "comedy,crime,drama,mystery,thriller",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 23433,
+      "title": "Underwater",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjYvMDIvMjIvMjAyNjAyMjIxNDI4MTczNDM3Ni5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2026/02/22/2026022214281734376.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjYvMDIvMjIvMjAyNjAyMjIxNDI4MTczNDM3Ni5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "5.9",
+      "audio_lang": "eng",
+      "runtime": 94,
+      "cats": "action,adventure,horror",
+      "year": 2020,
+      "3d": 0
+    },
+    {
+      "mid": 9,
+      "title": "A Quiet Place",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIwOTU2MDMzOTI5Ni5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/07/12/2018071209560339296.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDcvMTIvMjAxODA3MTIwOTU2MDMzOTI5Ni5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "7.5",
+      "audio_lang": "eng,rus,ukr,ger,spa,fre,ita,por",
+      "runtime": 90,
+      "cats": "drama,horror,sci-fi",
+      "year": 2018,
+      "3d": 0
+    },
+    {
+      "mid": 14922,
+      "title": "Gisaengchung",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDcvMjkvMjAxOTA3MjkwMzUxMDM0MjQ2Ny5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/07/29/2019072903510342467.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDcvMjkvMjAxOTA3MjkwMzUxMDM0MjQ2Ny5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "8.5",
+      "audio_lang": "kor,fre",
+      "runtime": 132,
+      "cats": "comedy,drama,thriller",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 19171,
+      "title": "The Vast of Night",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDkvMjkvMjAxOTA5MjkwNTUyMDMyMzE2My5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/09/29/2019092905520323163.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDkvMjkvMjAxOTA5MjkwNTUyMDMyMzE2My5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "6.7",
+      "audio_lang": "eng",
+      "runtime": 89,
+      "cats": "fantasy,mystery,sci-fi,thriller",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 13976,
+      "title": "Us",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDUvMjQvMjAxOTA1MjQwMTA0MTI1MDM1My5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/05/24/2019052401041250353.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDUvMjQvMjAxOTA1MjQwMTA0MTI1MDM1My5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, blu-ray",
+      "imdb_rating": "6.8",
+      "audio_lang": "eng",
+      "runtime": 116,
+      "cats": "horror,thriller",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 24192,
+      "title": "Guns Akimbo",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDMvMDIvMjAyMDAzMDIwMjI4MDQyMjA0NC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/03/02/2020030202280422044.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDMvMDIvMjAyMDAzMDIwMjI4MDQyMjA0NC5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "6.3",
+      "audio_lang": "eng",
+      "runtime": 95,
+      "cats": "action,comedy",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 14993,
+      "title": "Once Upon a Time ... in Hollywood",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDcvMjkvMjAxOTA3MjkwNDM5MDQyNjgyOC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/07/29/2019072904390426828.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDcvMjkvMjAxOTA3MjkwNDM5MDQyNjgyOC5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, blu-ray",
+      "imdb_rating": "7.6",
+      "audio_lang": "eng",
+      "runtime": 161,
+      "cats": "comedy,drama",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 14926,
+      "title": "Joker",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDcvMjkvMjAxOTA3MjkwMzUzMDM3MTI3OS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/07/29/2019072903530371279.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDcvMjkvMjAxOTA3MjkwMzUzMDM3MTI3OS5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "8.3",
+      "audio_lang": "eng",
+      "runtime": 122,
+      "cats": "crime,drama,thriller",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 25925,
+      "title": "The Lodge",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDQvMjgvMjAyMDA0MjgwMjQ2MDU2OTIyMS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/04/28/2020042802460569221.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDQvMjgvMjAyMDA0MjgwMjQ2MDU2OTIyMS5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "6",
+      "audio_lang": "eng",
+      "runtime": 108,
+      "cats": "drama,horror,thriller",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 14941,
+      "title": "It: Chapter Two",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjYvMDIvMjIvMjAyNjAyMjIxNDIwNTI5ODc3NS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2026/02/22/2026022214205298775.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjYvMDIvMjIvMjAyNjAyMjIxNDIwNTI5ODc3NS5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, blu-ray, dolby",
+      "imdb_rating": "6.5",
+      "audio_lang": "eng",
+      "runtime": 169,
+      "cats": "drama,fantasy,horror",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 25493,
+      "title": "Saint Maud",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDQvMTAvMjAyMDA0MTAwMzUyMDYxOTQ3Ny5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/04/10/2020041003520619477.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDQvMTAvMjAyMDA0MTAwMzUyMDYxOTQ3Ny5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "6.6",
+      "audio_lang": "eng",
+      "runtime": 84,
+      "cats": "drama,horror,mystery",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 6463,
+      "title": "Hereditary",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDgvMjYvMjAxODA4MjYwNDAwMDI4Nzc3OC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2018/08/26/2018082604000287778.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMDgvMjYvMjAxODA4MjYwNDAwMDI4Nzc3OC5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray",
+      "imdb_rating": "7.3",
+      "audio_lang": "eng",
+      "runtime": 127,
+      "cats": "drama,horror,mystery",
+      "year": 2018,
+      "3d": 0
+    },
+    {
+      "mid": 14954,
+      "title": "Ready or Not",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDcvMjkvMjAxOTA3MjkwNDEzMDMxNzI0MC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/07/29/2019072904130317240.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDcvMjkvMjAxOTA3MjkwNDEzMDMxNzI0MC5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "6.8",
+      "audio_lang": "eng",
+      "runtime": 95,
+      "cats": "horror,mystery,thriller",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 19781,
+      "title": "La trinchera infinita",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTAvMjIvMjAxOTEwMjIyMzA2MjM0MTUzNy5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/10/22/2019102223062341537.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTAvMjIvMjAxOTEwMjIyMzA2MjM0MTUzNy5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "7.2",
+      "audio_lang": "spa",
+      "runtime": 147,
+      "cats": "drama",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 25907,
+      "title": "Bad Education",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDQvMjcvMjAyMDA0MjcwNzA0MjA1Mjg5MS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/04/27/2020042707042052891.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDQvMjcvMjAyMDA0MjcwNzA0MjA1Mjg5MS5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "7.1",
+      "audio_lang": "eng",
+      "runtime": 103,
+      "cats": "comedy,drama",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 25456,
+      "title": "O que arde",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDQvMDkvMjAyMDA0MDkwNDQzMDUxNjI5OS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/04/09/2020040904430516299.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDQvMDkvMjAyMDA0MDkwNDQzMDUxNjI5OS5qcGd8NTAwfDc0.png",
+      "quality_tag": "dolby",
+      "imdb_rating": "6.6",
+      "audio_lang": "glg",
+      "runtime": 86,
+      "cats": "crime,drama",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 24231,
+      "title": "The Hunt",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDMvMDQvMjAyMDAzMDQwMDI0MTE1OTI1Ni5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/03/04/2020030400241159256.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDMvMDQvMjAyMDAzMDQwMDI0MTE1OTI1Ni5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "6.6",
+      "audio_lang": "eng",
+      "runtime": 115,
+      "cats": "action,horror,thriller",
+      "year": 2020,
+      "3d": 0
+    },
+    {
+      "mid": 22846,
+      "title": "After Midnight",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTIvMjMvMjAxOTEyMjMwMzMyMDM0MDA0OS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/12/23/2019122303320340049.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTIvMjMvMjAxOTEyMjMwMzMyMDM0MDA0OS5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "5.4",
+      "audio_lang": "eng",
+      "runtime": 83,
+      "cats": "drama,horror,sci-fi",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 23670,
+      "title": "Vivarium",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDIvMDQvMjAyMDAyMDQwMzMyMDU2MTk0OC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/02/04/2020020403320561948.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDIvMDQvMjAyMDAyMDQwMzMyMDU2MTk0OC5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "5.9",
+      "audio_lang": "eng",
+      "runtime": 97,
+      "cats": "mystery,sci-fi",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 23085,
+      "title": "Swallow",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDEvMDUvMjAyMDAxMDUyMDE2MDQ2NzczMS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/01/05/2020010520160467731.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDEvMDUvMjAyMDAxMDUyMDE2MDQ2NzczMS5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "6.5",
+      "audio_lang": "eng",
+      "runtime": 94,
+      "cats": "drama,horror,thriller",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 24729,
+      "title": "Ventajas de viajar en tren",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDMvMTgvMjAyMDAzMTgwNzA0Mjg2MjA5Ny5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/03/18/2020031807042862097.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDMvMTgvMjAyMDAzMTgwNzA0Mjg2MjA5Ny5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "6.4",
+      "audio_lang": "spa",
+      "runtime": 106,
+      "cats": "thriller",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 19779,
+      "title": "La hija de un ladrón",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTAvMjIvMjAxOTEwMjIwNjA3MDU0MjgwOS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/10/22/2019102206070542809.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTAvMjIvMjAxOTEwMjIwNjA3MDU0MjgwOS5qcGd8NTAwfDc0.png",
+      "quality_tag": "",
+      "imdb_rating": "6.2",
+      "audio_lang": "",
+      "runtime": 102,
+      "cats": "drama",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 20509,
+      "title": "1917",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTEvMDgvMjAxOTExMDgwMTMwMDQ3NTY5Mi5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/11/08/2019110801300475692.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTEvMDgvMjAxOTExMDgwMTMwMDQ3NTY5Mi5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "8.2",
+      "audio_lang": "eng",
+      "runtime": 110,
+      "cats": "drama,war",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 24364,
+      "title": "Spenser Confidential",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDMvMDcvMjAyMDAzMDcxMzA0MTc1ODk1NC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/03/07/2020030713041758954.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDMvMDcvMjAyMDAzMDcxMzA0MTc1ODk1NC5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray, dolby",
+      "imdb_rating": "6.2",
+      "audio_lang": "eng",
+      "runtime": 111,
+      "cats": "crime,drama,mystery,thriller",
+      "year": 2020,
+      "3d": 0
+    },
+    {
+      "mid": 20529,
+      "title": "Waves",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTEvMDgvMjAxOTExMDgwMTQyMDM2NjQ4OC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/11/08/2019110801420366488.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTEvMDgvMjAxOTExMDgwMTQyMDM2NjQ4OC5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "7.5",
+      "audio_lang": "eng",
+      "runtime": 135,
+      "cats": "drama,romance",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 14634,
+      "title": "Midsommar",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDcvMjIvMjAxOTA3MjIwMzEyMDM1MTc2Mi5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/07/22/2019072203120351762.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDcvMjIvMjAxOTA3MjIwMzEyMDM1MTc2Mi5qcGd8NTAwfDc0.png",
+      "quality_tag": "4k, 4k_hdr, blu-ray",
+      "imdb_rating": "7.1",
+      "audio_lang": "eng",
+      "runtime": 147,
+      "cats": "drama,horror,mystery,thriller",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 26017,
+      "title": "Ema",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDUvMDQvMjAyMDA1MDQwMDAyMDY2NTM2NC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/05/04/2020050400020665364.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDUvMDQvMjAyMDA1MDQwMDAyMDY2NTM2NC5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray",
+      "imdb_rating": "6.7",
+      "audio_lang": "spa",
+      "runtime": 107,
+      "cats": "drama,music",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 23093,
+      "title": "Come to Daddy",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDEvMDUvMjAyMDAxMDUyMDM5MDQ2MDc1My5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/01/05/2020010520390460753.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDEvMDUvMjAyMDAxMDUyMDM5MDQ2MDc1My5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "6",
+      "audio_lang": "eng",
+      "runtime": 93,
+      "cats": "comedy,horror,thriller",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 20523,
+      "title": "Knives Out",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTEvMDgvMjAxOTExMDgwMTM5MDMxMDY4OS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/11/08/2019110801390310689.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTEvMDgvMjAxOTExMDgwMTM5MDMxMDY4OS5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "7.9",
+      "audio_lang": "eng",
+      "runtime": 130,
+      "cats": "comedy,crime,drama,mystery,thriller",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 29778,
+      "title": "Synchronic",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDkvMTMvMjAyMDA5MTMyMzA4MDg5MjIyNS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/09/13/2020091323080892225.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDkvMTMvMjAyMDA5MTMyMzA4MDg5MjIyNS5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "6.2",
+      "audio_lang": "eng",
+      "runtime": 96,
+      "cats": "drama,horror,sci-fi",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 24590,
+      "title": "Koirat eivät käytä housuja",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjYvMDIvMjIvMjAyNjAyMjIxMzI3MTk5MDcxMy5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2026/02/22/2026022213271990713.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjYvMDIvMjIvMjAyNjAyMjIxMzI3MTk5MDcxMy5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "6.7",
+      "audio_lang": "fin",
+      "runtime": 100,
+      "cats": "drama,romance",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 18244,
+      "title": "Madre",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDkvMjAvMjAxOTA5MjAwMjE1MDQxMjc5OS5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2019/09/20/2019092002150412799.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDkvMjAvMjAxOTA5MjAwMjE1MDQxMjc5OS5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "6.6",
+      "audio_lang": "fre",
+      "runtime": 128,
+      "cats": "thriller",
+      "year": 2019,
+      "3d": 0
+    },
+    {
+      "mid": 25022,
+      "title": "The Occupant",
+      "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDMvMjYvMjAyMDAzMjYyMzU3MDYyOTY0NC5qcGd8MzAwfDc0.png",
+      "poster_org": "https://images.chuaxin.com/uploadimg/movie/2020/03/26/2020032623570629644.jpg",
+      "poster": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjAvMDMvMjYvMjAyMDAzMjYyMzU3MDYyOTY0NC5qcGd8NTAwfDc0.png",
+      "quality_tag": "blu-ray, dolby",
+      "imdb_rating": "6.4",
+      "audio_lang": "spa",
+      "runtime": 103,
+      "cats": "drama,thriller",
+      "year": 2020,
+      "3d": 0
+    }
+  ],
+  "add_time": 1569750724,
+  "collect": 7583,
+  "view": 1202533,
+  "download": 840,
+  "released": "8 November 2019 (Spain)",
+  "released_timestamp": 1573142400,
+  "update_time": 1569750724,
+  "audio_lang": [
+    "spa",
+    "eng",
+    "fra",
+    "ita"
+  ],
+  "quality_tag": "webdl",
+  "quality_tag_new": "blu-ray",
+  "3d": 0,
+  "remark": "[{\"remark\":\"\\u6ca1\\u6709\\u84dd\\u5149\\u975e\\u82f1\\u8bed\",\"operator\":\"joy\",\"dateline\":0}]",
+  "pending": "",
+  "content_rating": "",
+  "tmdb_id": 619264,
+  "tomato_url": "https://www.rottentomatoes.com/m/the_platform",
+  "tomato_meter": 80,
+  "tomato_meter_count": 97,
+  "tomato_meter_state": "certified-fresh",
+  "reelgood_url": "",
+  "audience_score": 73,
+  "audience_score_count": 2481,
+  "no_tomato_url": 0,
+  "weights": 0.3030997217,
+  "1080p": 1,
+  "short_tag": "el-hoyo-2019",
+  "like_status": 0,
+  "like_total": 446,
+  "dislike_total": 42,
+  "poster_min": "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjUvMTAvMDcvMjAyNTEwMDcwNTQ1NDQzNDE4Mi5qcGd8MzAwfDc0.png",
+  "poster_org": "https://images.chuaxin.com/uploadimg/movie/2025/10/07/2025100705454434182.jpg",
+  "trailer_url_arr": [
+    {
+      "url": "https://m.youtube.com/watch?v=Bsyicj2qdqs",
+      "img": "https://i.ytimg.com/vi/Bsyicj2qdqs/hqdefault.jpg"
+    },
+    {
+      "url": "https://m.youtube.com/watch?v=Ez0rXJfjnsc",
+      "img": "https://i.ytimg.com/vi/Ez0rXJfjnsc/hqdefault.jpg"
+    },
+    {
+      "url": "https://m.youtube.com/watch?v=RlfooqeZcdY",
+      "img": "https://i.ytimg.com/vi/RlfooqeZcdY/hqdefault.jpg"
+    }
+  ],
+  "trailer_url": "https://m.youtube.com/watch?v=Bsyicj2qdqs",
+  "quality": [
+    "720p",
+    "360p",
+    "1080p",
+    "1080p",
+    "1080p",
+    "720p",
+    "360p",
+    "1080p"
+  ],
+  "quality_tags": [
+    "webdl"
+  ],
+  "quality_tags_new": [
+    "blu-ray"
+  ],
+  "imdb_link": "https://www.imdb.com/title/tt8228288/",
+  "file": [
+    {
+      "path": "",
+      "quality": "720p",
+      "format": "mp4",
+      "size": "435.06 MB",
+      "vip_only": 1,
+      "count": 64594,
+      "dateline": 1584943935,
+      "mmfid": 117554,
+      "filename": "The.Platform.2019.1080p.NF.WEB-DL.DDP5.1.x264-NTG.mkv",
+      "quality_tag": "webdl",
+      "audio_lang": "spa",
+      "3d": 0
+    },
+    {
+      "path": "https://mp4.shegu.net/movie_box/movie_mp4_h264/2019/1/3/19173/movie.19173.2019.360p.H264.20200323013736.mp4",
+      "quality": "360p",
+      "format": "mp4",
+      "size": "174.93 MB",
+      "vip_only": 0,
+      "count": 243666,
+      "dateline": 1584943941,
+      "mmfid": 117555,
+      "filename": "The.Platform.2019.1080p.NF.WEB-DL.DDP5.1.x264-NTG.mkv",
+      "quality_tag": "webdl",
+      "audio_lang": "spa",
+      "3d": 0
+    },
+    {
+      "path": "",
+      "quality": "1080p",
+      "format": "mp4",
+      "size": "4.72 GB",
+      "vip_only": 1,
+      "count": 85305,
+      "dateline": 1593083269,
+      "mmfid": 117558,
+      "filename": "The.Platform.2019.1080p.NF.WEB-DL.DDP5.1.x264-NTG.mkv",
+      "quality_tag": "webdl",
+      "audio_lang": "spa",
+      "3d": 0
+    },
+    {
+      "path": "",
+      "quality": "1080p",
+      "format": "mp4",
+      "size": "1.35 GB",
+      "vip_only": 1,
+      "count": 180601,
+      "dateline": 1595003022,
+      "mmfid": 134774,
+      "filename": "The.Platform.2019.1080p.NF.WEB-DL.DDP5.1.x264-NTG.mkv",
+      "quality_tag": "webdl",
+      "audio_lang": "spa",
+      "3d": 0
+    },
+    {
+      "path": "",
+      "quality": "1080p",
+      "format": "mp4",
+      "size": "2.39 GB",
+      "vip_only": 1,
+      "count": 19107,
+      "dateline": 1713967919,
+      "mmfid": 256224,
+      "filename": "The.Platform.2019.1080p.mp4",
+      "quality_tag": "",
+      "audio_lang": "eng,fra,ita,spa",
+      "3d": 0
+    },
+    {
+      "path": "",
+      "quality": "720p",
+      "format": "mp4",
+      "size": "1.07 GB",
+      "vip_only": 1,
+      "count": 10021,
+      "dateline": 1713967919,
+      "mmfid": 256225,
+      "filename": "The.Platform.2019.1080p.mp4",
+      "quality_tag": "",
+      "audio_lang": "eng,fra,ita,spa",
+      "3d": 0
+    },
+    {
+      "path": "https://mp4.shegu.net/movie_box/movie_mp4_h264/2019/1/3/19173/movie.19173.2019.360p.H264.20240424092711.mp4",
+      "quality": "360p",
+      "format": "mp4",
+      "size": "570.3 MB",
+      "vip_only": 0,
+      "count": 20515,
+      "dateline": 1713967919,
+      "mmfid": 256226,
+      "filename": "The.Platform.2019.1080p.mp4",
+      "quality_tag": "",
+      "audio_lang": "eng,fra,ita,spa",
+      "3d": 0
+    },
+    {
+      "path": "",
+      "quality": "1080p",
+      "format": "",
+      "size": "3.96 GB",
+      "vip_only": 1,
+      "count": 15136,
+      "dateline": 1713968112,
+      "mmfid": 256227,
+      "filename": "The.Platform.2019.1080p.mp4",
+      "quality_tag": "",
+      "audio_lang": "eng,fra,ita,spa",
+      "3d": 0
+    }
+  ],
+  "seconds": 0,
+  "is_collect": 0,
+  "box_type": 1,
+  "country_list": [
+    "Spain"
+  ],
+  "language": [
+    {
+      "title": "The Platform",
+      "lang": "en"
+    },
+    {
+      "title": "The Platform",
+      "lang": "en_1"
+    },
+    {
+      "title": "El hoyo",
+      "lang": "es"
+    },
+    {
+      "title": "プラットフォーム",
+      "lang": "ja"
+    },
+    {
+      "title": "Der Schacht",
+      "lang": "de"
+    },
+    {
+      "title": "La Plateforme",
+      "lang": "fr"
+    },
+    {
+      "title": "더 플랫폼",
+      "lang": "ko"
+    },
+    {
+      "title": "饥饿站台",
+      "lang": "zh-CN"
+    },
+    {
+      "title": "絕命大平台",
+      "lang": "zh-TW"
+    },
+    {
+      "title": "The Platform",
+      "lang": "ca"
+    },
+    {
+      "title": "The Platform",
+      "lang": "os"
+    },
+    {
+      "title": "Platforma",
+      "lang": "ro"
+    },
+    {
+      "title": "The Platform",
+      "lang": "qu"
+    },
+    {
+      "title": "A Plataforma",
+      "lang": "pt"
+    },
+    {
+      "title": "Platforma",
+      "lang": "pl"
+    },
+    {
+      "title": "The Platform",
+      "lang": "pa"
+    },
+    {
+      "title": "The Platform",
+      "lang": "ny"
+    },
+    {
+      "title": "The Platform",
+      "lang": "oc"
+    },
+    {
+      "title": "The Platform",
+      "lang": "si"
+    },
+    {
+      "title": "The Platform",
+      "lang": "nv"
+    },
+    {
+      "title": "Hullet",
+      "lang": "no"
+    },
+    {
+      "title": "The Platform",
+      "lang": "ms"
+    },
+    {
+      "title": "The Platform",
+      "lang": "mr"
+    },
+    {
+      "title": "Платформа",
+      "lang": "ru"
+    },
+    {
+      "title": "Платформа",
+      "lang": "sr"
+    },
+    {
+      "title": "The Platform",
+      "lang": "sq"
+    },
+    {
+      "title": "The Platform",
+      "lang": "mi"
+    },
+    {
+      "title": "Hålet",
+      "lang": "sv"
+    },
+    {
+      "title": "The Platform",
+      "lang": "sw"
+    },
+    {
+      "title": "The Platform",
+      "lang": "ta"
+    },
+    {
+      "title": "The Platform",
+      "lang": "te"
+    },
+    {
+      "title": "เดอะ แพลตฟอร์ม",
+      "lang": "th"
+    },
+    {
+      "title": "The Platform",
+      "lang": "tl"
+    },
+    {
+      "title": "The Platform",
+      "lang": "tr"
+    },
+    {
+      "title": "Платформа",
+      "lang": "uk"
+    },
+    {
+      "title": "The Platform",
+      "lang": "ur"
+    },
+    {
+      "title": "Hố sâu đói khát",
+      "lang": "vi"
+    },
+    {
+      "title": "The Platform",
+      "lang": "xh"
+    },
+    {
+      "title": "The Platform",
+      "lang": "yi"
+    },
+    {
+      "title": "The Platform",
+      "lang": "ml"
+    },
+    {
+      "title": "Platforma",
+      "lang": "lt"
+    },
+    {
+      "title": "The Platform",
+      "lang": "ce"
+    },
+    {
+      "title": "The Platform",
+      "lang": "ga"
+    },
+    {
+      "title": "The Platform",
+      "lang": "cn"
+    },
+    {
+      "title": "Díra",
+      "lang": "cs"
+    },
+    {
+      "title": "The Platform",
+      "lang": "cy"
+    },
+    {
+      "title": "Platformen",
+      "lang": "da"
+    },
+    {
+      "title": "The Platform",
+      "lang": "bn"
+    },
+    {
+      "title": "Η Πλατφόρμα",
+      "lang": "el"
+    },
+    {
+      "title": "Платформата",
+      "lang": "bg"
+    },
+    {
+      "title": "The Platform",
+      "lang": "be"
+    },
+    {
+      "title": "The Platform",
+      "lang": "et"
+    },
+    {
+      "title": "The Platform",
+      "lang": "eu"
+    },
+    {
+      "title": "پلتفرم (سکو)",
+      "lang": "fa"
+    },
+    {
+      "title": "The Platform",
+      "lang": "ff"
+    },
+    {
+      "title": "Taso",
+      "lang": "fi"
+    },
+    {
+      "title": "المنصة",
+      "lang": "ar"
+    },
+    {
+      "title": "The Platform",
+      "lang": "gd"
+    },
+    {
+      "title": "The Platform",
+      "lang": "lo"
+    },
+    {
+      "title": "The Platform",
+      "lang": "iu"
+    },
+    {
+      "title": "The Platform",
+      "lang": "ln"
+    },
+    {
+      "title": "The Platform",
+      "lang": "ku"
+    },
+    {
+      "title": "The Platform",
+      "lang": "af"
+    },
+    {
+      "title": "The Platform",
+      "lang": "kk"
+    },
+    {
+      "title": "პლატფორმა",
+      "lang": "ka"
+    },
+    {
+      "title": "The Platform",
+      "lang": "ak"
+    },
+    {
+      "title": "Il buco",
+      "lang": "it"
+    },
+    {
+      "title": "The Platform",
+      "lang": "gl"
+    },
+    {
+      "title": "The Platform",
+      "lang": "id"
+    },
+    {
+      "title": "The Platform",
+      "lang": "hy"
+    },
+    {
+      "title": "A platform",
+      "lang": "hu"
+    },
+    {
+      "title": "Platforma",
+      "lang": "hr"
+    },
+    {
+      "title": "द प्लेटफ़ॉर्म",
+      "lang": "hi"
+    },
+    {
+      "title": "הפיר",
+      "lang": "he"
+    },
+    {
+      "title": "The Platform",
+      "lang": "zu"
+    }
+  ],
+  "playlists": [
+    {
+      "lid": 462255,
+      "name": "Mindfuck movies 2026",
+      "username": "42_Humm",
+      "count": 195,
+      "imgArr": [
+        "https://thumb.chuaxin.com/thumb_cGxheWxpc3RzX2NvdmVyLzQvNS80NjIyNTUvMjAyNDAzMjQwMjM0MjEuanBnfDUwMHw3NA__.png"
+      ],
+      "imgArr_min": [
+        "https://thumb.chuaxin.com/thumb_cGxheWxpc3RzX2NvdmVyLzQvNS80NjIyNTUvMjAyNDAzMjQwMjM0MjEuanBnfDMwMHw3NA__.png"
+      ],
+      "imgArr_org": [
+        "https://images.chuaxin.com/playlists_cover/4/5/462255/20240324023421.jpg"
+      ]
+    },
+    {
+      "lid": 135006,
+      "name": "THE COVENANT 1",
+      "username": "Antonio_Wells_(Beabud)mue",
+      "count": 3974,
+      "imgArr": [
+        "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTIvMDQvMjAxOTEyMDQwODQyMDUxMjYyOC5qcGd8NTAwfDc0.png"
+      ],
+      "imgArr_min": [
+        "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTIvMDQvMjAxOTEyMDQwODQyMDUxMjYyOC5qcGd8MzAwfDc0.png"
+      ],
+      "imgArr_org": [
+        "https://images.chuaxin.com/uploadimg/movie/2019/12/04/2019120408420512628.jpg"
+      ]
+    },
+    {
+      "lid": 28581,
+      "name": "city movies",
+      "username": "LIL_SYD_Foreverb4",
+      "count": 456,
+      "imgArr": [
+        "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMTIvMjQvMjAxODEyMjQxNTQ1Mjg3Mjc2Ni5qcGd8NTAwfDc0.png"
+      ],
+      "imgArr_min": [
+        "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTgvMTIvMjQvMjAxODEyMjQxNTQ1Mjg3Mjc2Ni5qcGd8MzAwfDc0.png"
+      ],
+      "imgArr_org": [
+        "https://images.chuaxin.com/uploadimg/movie/2018/12/24/2018122415452872766.jpg"
+      ]
+    },
+    {
+      "lid": 137177,
+      "name": "movies",
+      "username": "$KYzDaLiMitz_a2z_FiNdZ_941_",
+      "count": 2343,
+      "imgArr": [
+        "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDcvMjkvMjAxOTA3MjkwNDIxMDM0Nzc2NS5qcGd8NTAwfDc0.png"
+      ],
+      "imgArr_min": [
+        "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDcvMjkvMjAxOTA3MjkwNDIxMDM0Nzc2NS5qcGd8MzAwfDc0.png"
+      ],
+      "imgArr_org": [
+        "https://images.chuaxin.com/uploadimg/movie/2019/07/29/2019072904210347765.jpg"
+      ]
+    },
+    {
+      "lid": 14610,
+      "name": "movies i want to watch",
+      "username": "brice_massieg6",
+      "count": 76,
+      "imgArr": [
+        "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjEvMDUvMTQvMjAyMTA1MTQwMzQ3MzMzNzI4Ny5qcGd8NTAwfDc0.png"
+      ],
+      "imgArr_min": [
+        "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMjEvMDUvMTQvMjAyMTA1MTQwMzQ3MzMzNzI4Ny5qcGd8MzAwfDc0.png"
+      ],
+      "imgArr_org": [
+        "https://images.chuaxin.com/uploadimg/movie/2021/05/14/2021051403473337287.jpg"
+      ]
+    },
+    {
+      "lid": 134715,
+      "name": "BIGG DOGG",
+      "username": "Geronimof8",
+      "count": 1389,
+      "imgArr": [
+        "https://thumb.chuaxin.com/thumb_cGxheWxpc3RzX2NvdmVyLzEvNS8xMzQ3MTUvMjAxOTEyMDEyMjM5MzkuanBnfDUwMHw3NA__.png"
+      ],
+      "imgArr_min": [
+        "https://thumb.chuaxin.com/thumb_cGxheWxpc3RzX2NvdmVyLzEvNS8xMzQ3MTUvMjAxOTEyMDEyMjM5MzkuanBnfDMwMHw3NA__.png"
+      ],
+      "imgArr_org": [
+        "https://images.chuaxin.com/playlists_cover/1/5/134715/20191201223939.jpg"
+      ]
+    },
+    {
+      "lid": 867671,
+      "name": "THE HORROR CLUB 👹 (Vol.3) 👹 2 New 19/02/26 ✔️",
+      "username": "Badbren_Entertainment_",
+      "count": 759,
+      "imgArr": [
+        "https://thumb.chuaxin.com/thumb_cGxheWxpc3RzX2NvdmVyLzgvMS84Njc2NzEvNjhlZDhkNzBjMTcyYi5wbmd8NTAwfDc0.png"
+      ],
+      "imgArr_min": [
+        "https://thumb.chuaxin.com/thumb_cGxheWxpc3RzX2NvdmVyLzgvMS84Njc2NzEvNjhlZDhkNzBjMTcyYi5wbmd8MzAwfDc0.png"
+      ],
+      "imgArr_org": [
+        "https://images.chuaxin.com/playlists_cover/8/1/867671/68ed8d70c172b.png"
+      ]
+    },
+    {
+      "lid": 62074,
+      "name": "Movies worth watching 😁‼️",
+      "username": "Debbie_Leee0",
+      "count": 292,
+      "imgArr": [
+        "https://thumb.chuaxin.com/thumb_cGxheWxpc3RzX2NvdmVyLzYvNC82MjA3NC9wbGF5bGlzdF9jb3Zlcl9qZHYuanBnfDUwMHw3NA__.png"
+      ],
+      "imgArr_min": [
+        "https://thumb.chuaxin.com/thumb_cGxheWxpc3RzX2NvdmVyLzYvNC82MjA3NC9wbGF5bGlzdF9jb3Zlcl9qZHYuanBnfDMwMHw3NA__.png"
+      ],
+      "imgArr_org": [
+        "https://images.chuaxin.com/playlists_cover/6/4/62074/playlist_cover_jdv.jpg"
+      ]
+    },
+    {
+      "lid": 166679,
+      "name": "Foreign Film Playlist",
+      "username": "Lose_Fat_With_Matt9c2",
+      "count": 969,
+      "imgArr": [
+        "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDUvMDkvMjAxOTA1MDkwMTA0MjQ2NTQ4OS5qcGd8NTAwfDc0.png"
+      ],
+      "imgArr_min": [
+        "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMDUvMDkvMjAxOTA1MDkwMTA0MjQ2NTQ4OS5qcGd8MzAwfDc0.png"
+      ],
+      "imgArr_org": [
+        "https://images.chuaxin.com/uploadimg/movie/2019/05/09/2019050901042465489.jpg"
+      ]
+    },
+    {
+      "lid": 139621,
+      "name": "C RiCh",
+      "username": "Chris_C_Rich_Richardsony5k",
+      "count": 1972,
+      "imgArr": [
+        "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTEvMDgvMjAxOTExMDgwMTU3MDMxOTIxNi5qcGd8NTAwfDc0.png"
+      ],
+      "imgArr_min": [
+        "https://thumb.chuaxin.com/thumb_dXBsb2FkaW1nL21vdmllLzIwMTkvMTEvMDgvMjAxOTExMDgwMTU3MDMxOTIxNi5qcGd8MzAwfDc0.png"
+      ],
+      "imgArr_org": [
+        "https://images.chuaxin.com/uploadimg/movie/2019/11/08/2019110801570319216.jpg"
+      ]
+    }
+  ]
+}
