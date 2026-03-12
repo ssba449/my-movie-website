@@ -29,30 +29,23 @@ const streamProcess = spawn('node', ['server.js'], {
     env: { ...process.env, PORT: STREAM_PORT }
 });
 
-const streamProxyOpts = { target: `http://127.0.0.1:${STREAM_PORT}`, changeOrigin: true, pathRewrite: { '^/stream-server': '' } };
+const streamProxyOpts = { target: `http://127.0.0.1:${STREAM_PORT}`, changeOrigin: true };
 const showboxProxyOpts = { target: `http://127.0.0.1:${API_PORT}`, changeOrigin: true };
 
-// Proxy rules
-app.use('/stream-server', createProxyMiddleware(streamProxyOpts));
-app.use('/stream', createProxyMiddleware(streamProxyOpts));
+// ── Proxy Rules ──
 
-// Stream server aliases
-app.use('/api/play', createProxyMiddleware(streamProxyOpts));
-app.use('/api/stream', createProxyMiddleware(streamProxyOpts));
+// Playback & Series Metadata (Redirect to Stream Server)
+app.use('/api/play', createProxyMiddleware({ ...streamProxyOpts, pathRewrite: { '^/api/play': '/play' } }));
+app.use('/api/series', createProxyMiddleware({ ...streamProxyOpts, pathRewrite: { '^/api/series': '/series' } }));
+app.use('/api/shared', createProxyMiddleware({ ...streamProxyOpts, pathRewrite: { '^/api/shared': '/shared' } }));
+app.use('/api/bypass', createProxyMiddleware({ ...streamProxyOpts, pathRewrite: { '^/api/bypass': '/bypass' } }));
 
-// Showbox API aliases
-app.get('/api/movies', (req, res, next) => {
-    req.url = '/api/list';
-    req.query.type = 'movie';
-    next();
-});
+// Video Bytes (Direct to Stream Server shared endpoint)
+app.use('/stream', createProxyMiddleware({ ...streamProxyOpts, pathRewrite: { '^/stream': '/shared' } }));
 
-app.get('/api/tv', (req, res, next) => {
-    req.url = '/api/list';
-    req.query.type = 'tv';
-    next();
-});
-
+// Content Metadata (Redirect to Showbox API)
+// Since Showbox API now has routes like /movies, /tv, /search, /home directly,
+// we just proxy under /api and the default behavior will strip /api and send the rest.
 app.use('/api', createProxyMiddleware(showboxProxyOpts));
 
 // Root health check
@@ -62,8 +55,8 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Gateway server listening on port ${PORT}`);
-    console.log(`Proxying /api to port ${API_PORT}`);
-    console.log(`Proxying /stream to port ${STREAM_PORT}`);
+    console.log(`- /api matches Showbox API (port ${API_PORT})`);
+    console.log(`- /stream & /api/play match Stream Server (port ${STREAM_PORT})`);
 });
 
 process.on('SIGINT', () => {

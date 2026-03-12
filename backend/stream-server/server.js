@@ -98,13 +98,10 @@ function isRealCdnUrl(url) {
 }
 
 // ════════════════════════════════════════════════════════
-// GET /api/play?id=SHOWBOX_ID&type=1|2
-// 1. Calls /api/febbox/cdn-url on existing API (uses FEBBOX_UI_COOKIE
-//    to authenticate and get real CDN URL from video_quality_list)
-// 2. Stores CDN URL with a random token
-// 3. Returns ONLY: { stream: "/stream/{token}" }
-// ════════════════════════════════════════════════════════
-app.get("/api/play", async (req, res) => {
+// GET /play?id=SHOWBOX_ID&type=1|2
+// 1. Calls /febbox/id on existing API
+// ...
+app.get("/play", async (req, res) => {
   const { id, type = "1" } = req.query;
   if (!id) return res.status(400).json({ error: "Missing id" });
 
@@ -123,7 +120,7 @@ app.get("/api/play", async (req, res) => {
 
     // ── Step 1: Get Febbox share key ──
     try {
-      const idRes = await axios.get(`${API_URL}/api/febbox/id`, {
+      const idRes = await axios.get(`${API_URL}/febbox/id`, {
         params: { id, type }, timeout: 60_000
       });
       shareKey = idRes.data?.febBoxId;
@@ -137,7 +134,7 @@ app.get("/api/play", async (req, res) => {
     let fid = null;
     if (shareKey) {
       try {
-        const filesRes = await axios.get(`${API_URL}/api/febbox/files`, {
+        const filesRes = await axios.get(`${API_URL}/febbox/files`, {
           params: { shareKey, parent_id: 0 }, timeout: 30_000
         });
         const files = (filesRes.data || []).filter(f => !f.is_dir && f.fid);
@@ -172,7 +169,7 @@ app.get("/api/play", async (req, res) => {
     if (!cdnUrl) {
       console.log(`🔄 Puppeteer failed, trying FlareSolverr cdn-url endpoint...`);
       try {
-        const r = await axios.get(`${API_URL}/api/febbox/cdn-url`, {
+        const r = await axios.get(`${API_URL}/febbox/cdn-url`, {
           params: { id, type }, timeout: 90_000
         });
         const candidate = r.data.cdnUrl;
@@ -216,11 +213,10 @@ app.get("/api/play", async (req, res) => {
 });
 
 // ════════════════════════════════════════════════════════
-// GET /stream/:token
+// GET /:token (or /stream-shared/:token)
 // Proxies video bytes through this server.
-// Browser only sees: localhost:4000/stream/xxxx
 // ════════════════════════════════════════════════════════
-app.get("/stream/:token", async (req, res) => {
+app.get("/shared/:token", async (req, res) => {
   const data = activeStreams.get(req.params.token);
   if (!data) return res.status(404).json({ error: "Stream not found or expired" });
   if (data.expire < Date.now()) {
@@ -266,11 +262,11 @@ app.get("/stream/:token", async (req, res) => {
 });
 
 // ════════════════════════════════════════════════════════
-// GET /api/series/seasons?id=SHOWBOX_ID
+// GET /series/seasons?id=SHOWBOX_ID
 // 1. Gets Febbox share key for the series
 // 2. Lists root-level items (season folders)
 // ════════════════════════════════════════════════════════
-app.get("/api/series/seasons", async (req, res) => {
+app.get("/series/seasons", async (req, res) => {
   const { id } = req.query;
   if (!id) return res.status(400).json({ error: "Missing id" });
 
@@ -278,7 +274,7 @@ app.get("/api/series/seasons", async (req, res) => {
     console.log(`\n📺 /api/series/seasons id=${id}`);
 
     // Get Febbox share key for series (type=2)
-    const idRes = await axios.get(`${API_URL}/api/febbox/id`, {
+    const idRes = await axios.get(`${API_URL}/febbox/id`, {
       params: { id, type: 2 }, timeout: 120_000
     });
     const shareKey = idRes.data?.febBoxId;
@@ -286,7 +282,7 @@ app.get("/api/series/seasons", async (req, res) => {
     console.log(`✅ Share key: ${shareKey}`);
 
     // List root items (season folders)
-    const filesRes = await axios.get(`${API_URL}/api/febbox/files`, {
+    const filesRes = await axios.get(`${API_URL}/febbox/files`, {
       params: { shareKey, parent_id: 0 }, timeout: 60_000
     });
     const items = filesRes.data || [];
@@ -322,17 +318,17 @@ app.get("/api/series/seasons", async (req, res) => {
 });
 
 // ════════════════════════════════════════════════════════
-// GET /api/series/episodes?shareKey=X&seasonFid=Y
+// GET /series/episodes?shareKey=X&seasonFid=Y
 // Lists files inside a season folder (or root if seasonFid=0)
 // ════════════════════════════════════════════════════════
-app.get("/api/series/episodes", async (req, res) => {
+app.get("/series/episodes", async (req, res) => {
   const { shareKey, seasonFid = "0" } = req.query;
   if (!shareKey) return res.status(400).json({ error: "Missing shareKey" });
 
   try {
-    console.log(`\n📺 /api/series/episodes shareKey=${shareKey} seasonFid=${seasonFid}`);
+    console.log(`\n📺 /series/episodes shareKey=${shareKey} seasonFid=${seasonFid}`);
 
-    const filesRes = await axios.get(`${API_URL}/api/febbox/files`, {
+    const filesRes = await axios.get(`${API_URL}/febbox/files`, {
       params: { shareKey, parent_id: seasonFid }, timeout: 60_000
     });
     const items = filesRes.data || [];
@@ -368,10 +364,10 @@ app.get("/api/series/episodes", async (req, res) => {
 });
 
 // ════════════════════════════════════════════════════════
-// GET /api/play/episode?shareKey=X&fid=Y
+// GET /play/episode?shareKey=X&fid=Y
 // Plays a specific episode file by its fid and shareKey
 // ════════════════════════════════════════════════════════
-app.get("/api/play/episode", async (req, res) => {
+app.get("/play/episode", async (req, res) => {
   const { shareKey, fid } = req.query;
   if (!shareKey || !fid) return res.status(400).json({ error: "Missing shareKey or fid" });
 
@@ -411,9 +407,9 @@ app.get("/api/play/episode", async (req, res) => {
 
     // ── Strategy 2: Fallback to FlareSolverr links endpoint ──
     if (!cdnUrl) {
-      console.log(`🔄 Trying FlareSolverr /api/febbox/links fallback...`);
+      console.log(`🔄 Trying FlareSolverr /febbox/links fallback...`);
       try {
-        const r = await axios.get(`${API_URL}/api/febbox/links`, {
+        const r = await axios.get(`${API_URL}/febbox/links`, {
           params: { shareKey, fid }, timeout: 150_000
         });
         const links = (r.data || []).filter(l => isRealCdnUrl(l.url));
@@ -464,14 +460,14 @@ app.get("/api/play/episode", async (req, res) => {
 });
 
 // ── Cookie status endpoint ──
-// GET /api/cookies/status
-app.get("/api/cookies/status", (req, res) => {
+// GET /cookies/status
+app.get("/cookies/status", (req, res) => {
   res.json(getCookieStatus());
 });
 
 // ── Manual cookie injection endpoint ──
-// POST /api/cookies/set  { cookieString: "ui=...; cf_clearance=..." }
-app.post("/api/cookies/set", express.json(), (req, res) => {
+// POST /cookies/set  { cookieString: "ui=...; cf_clearance=..." }
+app.post("/cookies/set", express.json(), (req, res) => {
   const { cookieString } = req.body || {};
   if (!cookieString) return res.status(400).json({ error: "Missing cookieString" });
   setCookiesManually(cookieString);
@@ -479,7 +475,7 @@ app.post("/api/cookies/set", express.json(), (req, res) => {
 });
 
 // ── Universal Cloudflare Bypass API for API Server ──
-app.get("/api/bypass", async (req, res) => {
+app.get("/bypass", async (req, res) => {
   const { url } = req.query;
   if (!url) return res.status(400).json({ error: "Missing url" });
   try {

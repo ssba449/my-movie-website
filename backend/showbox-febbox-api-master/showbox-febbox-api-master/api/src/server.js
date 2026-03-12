@@ -56,10 +56,10 @@ function bestQuality(links) {
 }
 
 // ── Stream endpoint — picks best file, returns fid + shareKey ─────
-// GET /api/febbox/stream?id=SHOWBOX_ID&type=1|2
+// GET /febbox/stream?id=SHOWBOX_ID&type=1|2
 const streamCache = new Map();
 
-app.get('/api/febbox/stream', async (req, res) => {
+app.get('/febbox/stream', async (req, res) => {
     const { id, type = '1' } = req.query;
     const cacheKey = `${id}-${type}`;
 
@@ -113,11 +113,11 @@ app.get('/api/febbox/stream', async (req, res) => {
 });
 
 // ── CDN URL endpoint — extracts direct video CDN URL via FlareSolverr ─
-// GET /api/febbox/cdn-url?id=SHOWBOX_ID&type=1|2
+// GET /febbox/cdn-url?id=SHOWBOX_ID&type=1|2
 // Returns: { cdnUrl, quality, fileName, fileSize }
 const cdnCache = new Map();
 
-app.get('/api/febbox/cdn-url', async (req, res) => {
+app.get('/febbox/cdn-url', async (req, res) => {
     const { id, type = '1' } = req.query;
     const cacheKey = `cdn-${id}-${type}`;
 
@@ -186,11 +186,11 @@ app.get('/api/febbox/cdn-url', async (req, res) => {
 
 
 // ── Proxy stream endpoint — pipes Febbox video through our server ─
-// GET /api/febbox/proxy-stream?fid=X&shareKey=Y
+// GET /febbox/proxy-stream?fid=X&shareKey=Y
 // Allows <video> to play Febbox content without needing auth cookies
 const cookieCache = new Map();
 
-app.get('/api/febbox/proxy-stream', async (req, res) => {
+app.get('/febbox/proxy-stream', async (req, res) => {
     const { fid, shareKey } = req.query;
     if (!fid || !shareKey) return res.status(400).send('Missing fid or shareKey');
 
@@ -254,7 +254,7 @@ app.get('/api/febbox/proxy-stream', async (req, res) => {
 // ── Existing endpoints ────────────────────────────────────────────
 
 // Homepage feed (ShowBox Home_list)
-app.get('/api/home', async (req, res) => {
+app.get('/home', async (req, res) => {
     try {
         const data = await showboxAPI.getHomeList();
         res.json(data);
@@ -263,8 +263,38 @@ app.get('/api/home', async (req, res) => {
     }
 });
 
+// Standardized Movies/TV aliases
+app.get('/movies', async (req, res) => {
+    const { sort = 'release_date', page = 1, pagelimit = 20 } = req.query;
+    try {
+        res.json(await showboxAPI.getList('movie', sort, page, pagelimit));
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+app.get('/tv', async (req, res) => {
+    const { sort = 'release_date', page = 1, pagelimit = 20 } = req.query;
+    try {
+        res.json(await showboxAPI.getList('tv', sort, page, pagelimit));
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Categorized list endpoint alias
+app.get('/categories', async (req, res) => {
+    const { type = 'movie', sort = 'release_date', page = 1, pagelimit = 20 } = req.query;
+    try {
+        const data = await showboxAPI.getList(type, sort, page, pagelimit);
+        res.json(data);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 // Categorized list endpoint
-app.get('/api/list', async (req, res) => {
+app.get('/list', async (req, res) => {
     const { type = 'movie', sort = 'release_date', page = 1, pagelimit = 20 } = req.query;
     try {
         const data = await showboxAPI.getList(type, sort, page, pagelimit);
@@ -276,7 +306,7 @@ app.get('/api/list', async (req, res) => {
 
 app.get('/', (req, res) => res.send('Showbox and Febbox API is working!'));
 
-app.get('/api/autocomplete', async (req, res) => {
+app.get('/autocomplete', async (req, res) => {
     const { keyword, pagelimit } = req.query;
     try {
         res.json(await showboxAPI.getAutocomplete(keyword, pagelimit));
@@ -285,7 +315,7 @@ app.get('/api/autocomplete', async (req, res) => {
     }
 });
 
-app.get('/api/search', async (req, res) => {
+app.get('/search', async (req, res) => {
     const { type = 'all', title, page = 1, pagelimit = 20 } = req.query;
     try {
         res.json(await showboxAPI.search(title, type, page, pagelimit));
@@ -294,7 +324,7 @@ app.get('/api/search', async (req, res) => {
     }
 });
 
-app.get('/api/movie/:id', async (req, res) => {
+app.get('/movie/:id', async (req, res) => {
     try {
         res.json(await showboxAPI.getMovieDetails(req.params.id));
     } catch (error) {
@@ -302,7 +332,7 @@ app.get('/api/movie/:id', async (req, res) => {
     }
 });
 
-app.get('/api/show/:id', async (req, res) => {
+app.get('/show/:id', async (req, res) => {
     try {
         res.json(await showboxAPI.getShowDetails(req.params.id));
     } catch (error) {
@@ -310,7 +340,7 @@ app.get('/api/show/:id', async (req, res) => {
     }
 });
 
-app.get('/api/febbox/id', async (req, res) => {
+app.get('/febbox/id', async (req, res) => {
     const { id, type } = req.query;
     try {
         res.json({ febBoxId: await showboxAPI.getFebBoxId(id, type) });
@@ -319,7 +349,7 @@ app.get('/api/febbox/id', async (req, res) => {
     }
 });
 
-app.get('/api/febbox/files', async (req, res) => {
+app.get('/febbox/files', async (req, res) => {
     const { shareKey, parent_id = 0 } = req.query;
     const cookie = req.headers['x-auth-cookie'] || null;
     try {
@@ -329,7 +359,7 @@ app.get('/api/febbox/files', async (req, res) => {
     }
 });
 
-app.get('/api/febbox/links', async (req, res) => {
+app.get('/febbox/links', async (req, res) => {
     const { shareKey, fid } = req.query;
     const cookie = req.headers['x-auth-cookie'] || null;
     try {

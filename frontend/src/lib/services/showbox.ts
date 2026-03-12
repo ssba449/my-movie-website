@@ -1,10 +1,10 @@
 const API_BASE = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
-export const SHOWBOX_API_URL = `${API_BASE}/api`;
-const STREAM_SERVER = `${API_BASE}/stream-server`;
+export const API_URL = `${API_BASE}/api`;
+export const STREAM_URL = `${API_BASE}/stream`;
 
 export async function getStream(id: string, type: 1 | 2): Promise<{ fid: number; shareKey: string; fileName?: string; fileSize?: string } | null> {
     try {
-        const res = await fetch(`${SHOWBOX_API_URL}/febbox/stream?id=${id}&type=${type}`, { cache: "no-store" });
+        const res = await fetch(`${API_URL}/febbox/stream?id=${id}&type=${type}`, { cache: "no-store" });
         if (!res.ok) return null;
         return await res.json();
     } catch {
@@ -51,7 +51,7 @@ export async function searchShowbox(query: string, type: "movie" | "tv" | "all" 
     const lowerQuery = query.toLowerCase().trim();
 
     // Fetch from External API
-    const data = await safeFetchJson(`${SHOWBOX_API_URL}/search?type=${type}&page=${page}&pagelimit=${limit}${queryParam}`);
+    const data = await safeFetchJson(`${API_URL}/search?type=${type}&page=${page}&pagelimit=${limit}${queryParam}`);
     const apiResults = data?.list || (Array.isArray(data) ? data : []);
 
     // Intelligent Sorting
@@ -91,13 +91,13 @@ export async function getShowboxTrending(type: "movie" | "tv" | "all" = "all", l
 // ── Categorized content fetchers ──────────────────────────────────
 
 export async function getShowboxHomeList() {
-    const data = await safeFetchJson(`${SHOWBOX_API_URL}/home`);
+    const data = await safeFetchJson(`${API_URL}/home`);
     return data || { list: [] };
 }
 
 export async function getShowboxList(type: string = "movie", sort: string = "release_date", page: number = 1, limit: number = 20) {
     const endpoint = type === "tv" || type === "series" ? "tv" : "movies";
-    const data = await safeFetchJson(`${SHOWBOX_API_URL}/${endpoint}?sort=${sort}&page=${page}&pagelimit=${limit}`);
+    const data = await safeFetchJson(`${API_URL}/${endpoint}?sort=${sort}&page=${page}&pagelimit=${limit}`);
     return data || { list: [] };
 }
 
@@ -124,11 +124,11 @@ export async function getShowboxIMDBTopMovies(limit: number = 20) {
 }
 
 export async function getShowboxMovieDetails(id: string) {
-    return await safeFetchJson(`${SHOWBOX_API_URL}/movie/${id}`);
+    return await safeFetchJson(`${API_URL}/movie/${id}`);
 }
 
 export async function getShowboxShowDetails(id: string) {
-    return await safeFetchJson(`${SHOWBOX_API_URL}/show/${id}`);
+    return await safeFetchJson(`${API_URL}/show/${id}`);
 }
 
 export async function getNormalizedShowboxContent(id: string, typeHint?: "movie" | "series" | "tv") {
@@ -184,7 +184,7 @@ export async function getNormalizedShowboxContent(id: string, typeHint?: "movie"
 
 export async function getFebboxId(id: string, type: 1 | 2) {
     try {
-        const res = await fetch(`${SHOWBOX_API_URL}/febbox/id?id=${id}&type=${type}`, { cache: "no-store" });
+        const res = await fetch(`${API_URL}/febbox/id?id=${id}&type=${type}`, { cache: "no-store" });
         if (!res.ok) throw new Error("Get Febbox ID failed");
         return await res.json();
     } catch (e) {
@@ -194,7 +194,7 @@ export async function getFebboxId(id: string, type: 1 | 2) {
 
 export async function getFebboxFiles(shareKey: string, parentId: string = "0") {
     try {
-        const res = await fetch(`${SHOWBOX_API_URL}/febbox/files?shareKey=${shareKey}&parent_id=${parentId}`, { cache: "no-store" });
+        const res = await fetch(`${API_URL}/febbox/files?shareKey=${shareKey}&parent_id=${parentId}`, { cache: "no-store" });
         if (!res.ok) throw new Error("Get Febbox Files failed");
         return await res.json();
     } catch (e) {
@@ -204,7 +204,7 @@ export async function getFebboxFiles(shareKey: string, parentId: string = "0") {
 
 export async function getFebboxLinks(shareKey: string, fid: string) {
     try {
-        const res = await fetch(`${SHOWBOX_API_URL}/febbox/links?shareKey=${shareKey}&fid=${fid}`, { cache: "no-store" });
+        const res = await fetch(`${API_URL}/febbox/links?shareKey=${shareKey}&fid=${fid}`, { cache: "no-store" });
         if (!res.ok) throw new Error("Get Febbox Links failed");
         return await res.json();
     } catch (e) {
@@ -216,7 +216,7 @@ export async function getFebboxLinks(shareKey: string, fid: string) {
 
 export async function getSeriesSeasons(showboxId: string): Promise<{ shareKey: string; seasons: any[]; hasDirectFiles: boolean } | null> {
     try {
-        const res = await fetch(`${STREAM_SERVER}/api/series/seasons?id=${showboxId}`, { cache: "no-store" });
+        const res = await fetch(`${API_URL}/series/seasons?id=${showboxId}`, { cache: "no-store" });
         if (!res.ok) throw new Error("Get series seasons failed");
         return await res.json();
     } catch (e) {
@@ -227,7 +227,7 @@ export async function getSeriesSeasons(showboxId: string): Promise<{ shareKey: s
 
 export async function getSeasonEpisodes(shareKey: string, seasonFid: string): Promise<{ episodes: any[] } | null> {
     try {
-        const res = await fetch(`${STREAM_SERVER}/api/series/episodes?shareKey=${shareKey}&seasonFid=${seasonFid}`, { cache: "no-store" });
+        const res = await fetch(`${API_URL}/series/episodes?shareKey=${shareKey}&seasonFid=${seasonFid}`, { cache: "no-store" });
         if (!res.ok) throw new Error("Get season episodes failed");
         return await res.json();
     } catch (e) {
@@ -238,7 +238,7 @@ export async function getSeasonEpisodes(shareKey: string, seasonFid: string): Pr
 
 export async function playEpisode(shareKey: string, fid: string): Promise<{ stream: string; size?: string; fileName?: string } | null> {
     try {
-        const res = await fetch(`${STREAM_SERVER}/api/play/episode?shareKey=${shareKey}&fid=${fid}`, { cache: "no-store" });
+        const res = await fetch(`${API_URL}/play/episode?shareKey=${shareKey}&fid=${fid}`, { cache: "no-store" });
         if (!res.ok) throw new Error("Play episode failed");
         return await res.json();
     } catch (e) {
