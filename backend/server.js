@@ -35,7 +35,24 @@ const showboxProxyOpts = { target: `http://127.0.0.1:${API_PORT}`, changeOrigin:
 // Proxy rules
 app.use('/stream-server', createProxyMiddleware(streamProxyOpts));
 app.use('/stream', createProxyMiddleware(streamProxyOpts));
+
+// Stream server aliases
 app.use('/api/play', createProxyMiddleware(streamProxyOpts));
+app.use('/api/stream', createProxyMiddleware(streamProxyOpts));
+
+// Showbox API aliases
+app.get('/api/movies', (req, res, next) => {
+    req.url = '/api/list';
+    req.query.type = 'movie';
+    next();
+});
+
+app.get('/api/tv', (req, res, next) => {
+    req.url = '/api/list';
+    req.query.type = 'tv';
+    next();
+});
+
 app.use('/api', createProxyMiddleware(showboxProxyOpts));
 
 // Root health check

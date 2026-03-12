@@ -96,7 +96,8 @@ export async function getShowboxHomeList() {
 }
 
 export async function getShowboxList(type: string = "movie", sort: string = "release_date", page: number = 1, limit: number = 20) {
-    const data = await safeFetchJson(`${SHOWBOX_API_URL}/list?type=${type}&sort=${sort}&page=${page}&pagelimit=${limit}`);
+    const endpoint = type === "tv" || type === "series" ? "tv" : "movies";
+    const data = await safeFetchJson(`${SHOWBOX_API_URL}/${endpoint}?sort=${sort}&page=${page}&pagelimit=${limit}`);
     return data || { list: [] };
 }
 
