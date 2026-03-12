@@ -7,7 +7,7 @@ export async function GET(req: NextRequest) {
     if (!id) return NextResponse.json({ error: "Missing series id" }, { status: 400 });
 
     try {
-        const backendUrl = process.env.BACKEND_URL || "http://127.0.0.1:3000";
+        const backendUrl = process.env.NEXT_PUBLIC_API_BASE || "http://127.0.0.1:3000";
         const res = await fetch(`${backendUrl}/stream-server/api/series/seasons?id=${id}`, { cache: "no-store" });
         const data = await res.json();
         return NextResponse.json(data);

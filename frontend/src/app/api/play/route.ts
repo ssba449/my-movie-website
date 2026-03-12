@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
     }
 
     try {
-        const backendBase = process.env.BACKEND_URL || "http://127.0.0.1:3000";
+        const backendBase = process.env.NEXT_PUBLIC_API_BASE || "http://127.0.0.1:3000";
         const backendUrl = `${backendBase}/stream-server/api/play?id=${id}&type=${type}`;
 
         const backendResponse = await fetch(backendUrl, {

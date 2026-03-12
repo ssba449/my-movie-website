@@ -12,7 +12,7 @@ export async function GET(
     }
 
     try {
-        const backendBase = process.env.BACKEND_URL || "http://localhost:3000";
+        const backendBase = process.env.NEXT_PUBLIC_API_BASE || "http://127.0.0.1:3000";
         const backendUrl = `${backendBase}/stream/${id}`;
 
         // Pass Range headers if the client is seeking through the video
