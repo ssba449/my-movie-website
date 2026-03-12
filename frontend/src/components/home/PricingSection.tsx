@@ -74,10 +74,7 @@ export default function PricingSection({ onSubscribe, isLoading }: PricingSectio
                             </h3>
                             <p className="text-white/60 font-medium tracking-wide mb-8">Ad-Free. 2K HDR. Spatial Audio.</p>
 
-                            <div className="flex items-end gap-1 mb-8">
-                                <span className="text-6xl font-bold text-white tracking-tighter">$3.99</span>
-                                <span className="text-white/50 pb-2 text-xl font-medium">/mo</span>
-                            </div>
+                            <div className="h-20" />
 
                             <div className="flex flex-col gap-4 text-white/80 text-[16px] font-medium tracking-wide mb-12">
                                 <div className="flex items-center gap-4">
