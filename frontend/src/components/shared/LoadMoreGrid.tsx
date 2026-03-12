@@ -24,19 +24,33 @@ export default function LoadMoreGrid({ initialData, type, keyword }: LoadMoreGri
             const apiBase = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
             const queryParam = keyword ? `&title=${encodeURIComponent(keyword)}` : "";
             // Use search endpoint which reliably returns the list format
-            const res = await fetch(`${apiBase}/api/search?type=${type}&page=${page}&pagelimit=60${queryParam}`);
-            const json = await res.json();
+            const rest = await fetch(`${apiBase}/api/search?type=${type}&page=${page}&pagelimit=60${queryParam}`);
+            const json = await rest.json();
 
-            if (json.success && json.data && json.data.length > 0) {
+            // Showbox API returns either { list: [...] } or the list directly as an array
+            const rawItems = json?.list || (Array.isArray(json) ? json : []);
+
+            if (rawItems && rawItems.length > 0) {
                 // Determine if we should stop. If we asked for 60 and got less, we're likely at the end.
-                if (json.data.length < 60) {
+                if (rawItems.length < 60) {
                     setHasMore(false);
                 }
 
                 // Append new unique items
                 setItems(prevItems => {
-                    const existingIds = new Set(prevItems.map(i => i.id));
-                    const newItems = json.data.filter((i: any) => !existingIds.has(i.id));
+                    const existingIds = new Set(prevItems.map(i => i.id?.toString()));
+                    const newItems = rawItems
+                        .filter((i: any) => !existingIds.has(i.id?.toString()))
+                        .map((i: any) => ({
+                            id: i.id?.toString(),
+                            title: i.title || i.display_title || "Unknown Title",
+                            posterUrl: i.poster || i.poster_min || "",
+                            imdbRating: i.rating || (i.imdb_rating ? i.imdb_rating.toString() : 0),
+                            genre: i.genre || "",
+                            year: i.year || (i.releaseYear ? i.releaseYear.toString() : undefined),
+                            runtime: i.runtime || 0,
+                            type: i.type || (i.box_type === 2 ? "tv" : i.box_type === 1 ? "movie" : type)
+                        }));
                     return [...prevItems, ...newItems];
                 });
 
