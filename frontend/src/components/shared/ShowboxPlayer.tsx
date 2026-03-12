@@ -5,6 +5,7 @@ import { MonitorPlay, Play, Pause, Volume2, VolumeX, Maximize, X, RotateCcw, Cap
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
 
+const apiBase = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
 const STREAM_SERVER = ""; // Now purely relative via /api proxy
 
 interface ShowboxPlayerProps {
@@ -84,7 +85,7 @@ export default function ShowboxPlayer({
         // After 6 seconds update message
         const msgTimer = setTimeout(() => setProgressMsg("Loading Video"), 6000);
 
-        const apiBase = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
+        // Removed local apiBase definition
         // Change fetch from stream server directly to NextJS proxy API
         fetch(`${apiBase}/api/play?id=${showboxId}&type=${showboxType}`)
             .then(r => {
@@ -148,7 +149,7 @@ export default function ShowboxPlayer({
             try {
                 // We add a cache-busting timestamp to prevent the browser from returning
                 // the old VTT response that might be aggressively cached
-                const apiBase = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
+                // Removed local apiBase definition
                 let subApi = `${apiBase}/api/subtitles?tmdbId=${tmdbId}&type=${type}&t=${Date.now()}`;
                 if (type === "series" && seasonNumber && episodeNumber) {
                     subApi += `&season=${seasonNumber}&episode=${episodeNumber}`;
@@ -239,7 +240,7 @@ export default function ShowboxPlayer({
             if (Math.abs(curr - lastReportedTime.current) >= 30 || (dur > 0 && curr >= dur * 0.95)) {
                 lastReportedTime.current = curr;
                 try {
-                    const apiBase = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
+                    // Removed local apiBase definition
                     await fetch(`${apiBase}/api/user/progress`, {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
@@ -492,7 +493,7 @@ export default function ShowboxPlayer({
                                                             <button
                                                                 key={sub.id}
                                                                 onClick={() => {
-                                                                    setSubtitleUrl(`/api/subtitles?downloadUrl=${encodeURIComponent(sub.downloadUrl)}`);
+                                                                    setSubtitleUrl(`${apiBase}/api/subtitles?downloadUrl=${encodeURIComponent(sub.downloadUrl)}`);
                                                                     setIsSubtitleMenuOpen(false);
 
                                                                     // Auto-enable track in the video element

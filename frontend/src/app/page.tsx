@@ -20,60 +20,14 @@ import { cookies } from "next/headers";
 export default async function Home() {
   const cookieStore = await cookies();
   const isKidsMode = cookieStore.get("kids_mode")?.value === "true";
-  let continueWatching: any[] = [];
 
-  // Fetch all categorized data in parallel for maximum speed
-  const [
-    rawTrendingAll,
-    rawTrendingMovies,
-    rawTrendingTVShows,
-    rawHotTVThisWeek,
-    rawLatestTV,
-    rawIMDBMovies,
-  ] = await Promise.all([
-    getShowboxTrending("all", 40),
-    getShowboxTrendingMovies(40),
-    getShowboxTrendingTVShows(40),
-    getShowboxHotTVThisWeek(40),
-    getShowboxLatestTV(40),
-    getShowboxIMDBTopMovies(40),
-  ]);
-
-  // Map everything to our standardized UI object format
+  // Fetch ONLY hero data on server for instant first paint
+  const rawTrendingAll = await getShowboxTrending("all", 20);
   const trendingAll = mapShowboxToContent(rawTrendingAll?.list || rawTrendingAll);
-  const trendingMovies = mapShowboxToContent(rawTrendingMovies?.list || rawTrendingMovies, "movie");
-  const trendingTVShows = mapShowboxToContent(rawTrendingTVShows?.list || rawTrendingTVShows, "series");
-  const hotTVThisWeek = mapShowboxToContent(rawHotTVThisWeek?.list || rawHotTVThisWeek, "series");
-  const latestTV = mapShowboxToContent(rawLatestTV?.list || rawLatestTV, "series");
-  const topMovies = mapShowboxToContent(rawIMDBMovies?.list || rawIMDBMovies, "movie");
 
-  // Kids Mode Filter
-  const kidsSafeGenres = ["Animation", "Family", "Kids", "Comedy", "Fantasy", "Adventure"];
-  const filterKids = (items: any[]) => {
-    if (!isKidsMode) return items;
-    return items.filter(item => {
-      if (!item.genre) return true; // Keep if no genre info, or be strict? Let's be semi-strict.
-      const itemGenres = item.genre.split(",").map((g: string) => g.trim().toLowerCase());
-      return itemGenres.some((g: string) => kidsSafeGenres.map(ks => ks.toLowerCase()).includes(g));
-    });
-  };
-
-  const filteredTrending = filterKids(trendingAll);
-  const filteredLatestTV = filterKids(latestTV);
-  const filteredHotTV = filterKids(hotTVThisWeek);
-  const filteredTopMovies = filterKids(topMovies);
-
-  // Sort IMDB movies by rating descending for proper "IMDB Rating" section
-  // This is now applied to the filteredTopMovies if kids mode is off, or just topMovies if kids mode is on
-  const imdbSorted = [...filteredTopMovies].sort((a, b) => {
-    const rA = parseFloat(a.imdbRating) || 0;
-    const rB = parseFloat(b.imdbRating) || 0;
-    return rB - rA;
-  });
-
-  // Filter out default placeholder images and map to HeroSlide format for the banner
+  // Filter hero slides for posters (remove defaults)
   const heroSlides = trendingAll
-    .filter((item: any) => item.backdropUrl && !item.backdropUrl.includes("poster_default2.png"))
+    .filter((item: any) => item.backdropUrl && !item.backdropUrl.includes("poster_default2.png") && !item.backdropUrl.includes("unsplash"))
     .slice(0, 10)
     .map((item: any) => ({
       id: item.id,
@@ -88,15 +42,17 @@ export default async function Home() {
 
       <div className="relative w-full max-w-[1440px] mx-auto z-10 pt-16">
 
-        {/* ── SECTION 0: Continue Watching ── */}
-        {continueWatching.length > 0 && (
+        {/* ── All rows now use lazy client-side fetching via fetchPath ── */}
+
+        {/* ── SECTION 0: Continue Watching (Placeholder for future implementation) ── */}
+        {/* {continueWatching.length > 0 && (
           <ContentRow title="🕒 Continue Watching" items={continueWatching} />
-        )}
+        )} */}
 
         {/* ── SECTION 1: Trending ── */}
         <ContentRow
           title={isKidsMode ? "👶 Kids Trending" : "🔥 Trending"}
-          items={filteredTrending}
+          fetchPath={`/api/home?type=trending&kidsMode=${isKidsMode}`}
           seeAllHref="/movies"
         />
 
@@ -104,19 +60,28 @@ export default async function Home() {
         {!isKidsMode && <RecommendationsRow />}
 
         {/* ── SECTION 3: This Week's Hot TVs ── */}
-        {filteredHotTV.length > 0 && (
-          <ContentRow title={isKidsMode ? "📺 Kids Favourites" : "📺 This Week's Hot TVs"} items={filteredHotTV} seeAllHref="/series" />
-        )}
+        <ContentRow
+          title={isKidsMode ? "📺 Kids Favourites" : "📺 This Week's Hot TVs"}
+          fetchPath={`/api/tv?sort=hot&kidsMode=${isKidsMode}`}
+          typeFallback="series"
+          seeAllHref="/series"
+        />
 
         {/* ── SECTION 4: Latest TV ── */}
-        {filteredLatestTV.length > 0 && (
-          <ContentRow title={isKidsMode ? "✨ New for Kids" : "✨ Latest TV"} items={filteredLatestTV} seeAllHref="/series" />
-        )}
+        <ContentRow
+          title={isKidsMode ? "✨ New for Kids" : "✨ Latest TV"}
+          fetchPath={`/api/tv?sort=release_date&kidsMode=${isKidsMode}`}
+          typeFallback="series"
+          seeAllHref="/series"
+        />
 
         {/* ── SECTION 5: Top Movies ── */}
-        {imdbSorted.length > 0 && (
-          <ContentRow title={isKidsMode ? "🎬 Family Movies" : "🎬 Top Movies"} items={imdbSorted} seeAllHref="/movies" />
-        )}
+        <ContentRow
+          title={isKidsMode ? "🎬 Family Movies" : "🎬 Top Movies"}
+          fetchPath={`/api/movies?sort=rating&kidsMode=${isKidsMode}`}
+          typeFallback="movie"
+          seeAllHref="/movies"
+        />
 
       </div>
 

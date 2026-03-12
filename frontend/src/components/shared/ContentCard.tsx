@@ -7,15 +7,16 @@ import { Star, Play, Heart } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 interface ContentCardProps {
-    id: string;
-    title: string;
-    posterUrl: string;
-    imdbRating: number | string;
+    id?: string;
+    title?: string;
+    posterUrl?: string;
+    imdbRating?: number | string;
     genre?: string;
     year?: string;
     runtime?: number;
     trailerUrl?: string;
     type?: "movie" | "tv" | "series" | "all";
+    loading?: boolean;
 }
 
 export default function ContentCard({
@@ -25,9 +26,20 @@ export default function ContentCard({
     imdbRating,
     year,
     runtime,
-    type
+    type,
+    loading = false
 }: ContentCardProps) {
     const [isHovered, setIsHovered] = useState(false);
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+    if (loading) {
+        return (
+            <div className="relative w-[140px] h-[210px] md:w-[180px] md:h-[270px] xl:w-[220px] xl:h-[330px] rounded-[28px] overflow-hidden bg-white/5 animate-pulse border border-white/5">
+                <div className="absolute inset-x-5 bottom-8 h-4 bg-white/10 rounded-full" />
+                <div className="absolute inset-x-5 bottom-14 h-3 w-1/2 bg-white/10 rounded-full" />
+            </div>
+        );
+    }
 
     return (
         <Link
@@ -35,24 +47,31 @@ export default function ContentCard({
             className="block relative focus:outline-none"
         >
             <div
-                className="relative w-[140px] h-[210px] md:w-[180px] md:h-[270px] xl:w-[220px] xl:h-[330px] rounded-[28px] overflow-hidden cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group shrink-0 bg-card shadow-[0_20px_60px_rgba(0,0,0,0.35)] group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+                className="relative w-[140px] h-[210px] md:w-[180px] md:h-[270px] xl:w-[220px] xl:h-[330px] rounded-[28px] overflow-hidden cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] group shrink-0 bg-[#1A1A1E] shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
                 {/* Base Poster View */}
                 <Image
-                    src={posterUrl || "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=220&auto=format&fit=crop"}
+                    src={posterUrl && posterUrl.startsWith('http') ? posterUrl : "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=220&auto=format&fit=crop"}
                     alt={title || "Content poster"}
                     fill
                     sizes="(max-width: 768px) 140px, (max-width: 1280px) 180px, 220px"
-                    className="object-cover transition-opacity duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
+                    className={`object-cover transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                    onLoad={() => setImageLoaded(true)}
                 />
 
+                {!imageLoaded && (
+                    <div className="absolute inset-0 bg-white/5 animate-pulse" />
+                )}
+
                 {/* Bottom Left IMDB Badge (Default State) */}
-                <div className="absolute bottom-3 left-3 flex items-center bg-[rgba(255,255,255,0.08)] backdrop-blur-[40px] text-white px-2 py-1 rounded-[8px] border border-[rgba(255,255,255,0.12)] text-[10px] font-bold transition-opacity duration-700 group-hover:opacity-0">
-                    <Star className="w-3 h-3 mr-1 fill-white text-white" />
-                    {imdbRating}
-                </div>
+                {imdbRating && (
+                    <div className="absolute bottom-3 left-3 flex items-center bg-[rgba(255,255,255,0.08)] backdrop-blur-[40px] text-white px-2 py-1 rounded-[8px] border border-[rgba(255,255,255,0.12)] text-[10px] font-bold transition-opacity duration-700 group-hover:opacity-0">
+                        <Star className="w-3 h-3 mr-1 fill-white text-white" />
+                        {imdbRating}
+                    </div>
+                )}
 
                 {/* Hover State Overlay */}
                 <div
