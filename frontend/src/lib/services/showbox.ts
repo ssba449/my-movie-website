@@ -1,6 +1,8 @@
 import { db } from "../db";
 
-export const SHOWBOX_API_URL = `${process.env.NEXT_PUBLIC_API_BASE || "http://127.0.0.1:3000"}/api`;
+const API_BASE = (process.env.NEXT_PUBLIC_API_BASE || "http://127.0.0.1:3000").replace(/\/$/, "");
+export const SHOWBOX_API_URL = `${API_BASE}/api`;
+const STREAM_SERVER = `${API_BASE}/stream-server`;
 
 export async function getStream(id: string, type: 1 | 2): Promise<{ fid: number; shareKey: string; fileName?: string; fileSize?: string } | null> {
     try {
@@ -330,7 +332,6 @@ export async function getFebboxLinks(shareKey: string, fid: string) {
 }
 
 // Stream-server series endpoints
-const STREAM_SERVER = `${process.env.NEXT_PUBLIC_API_BASE || "http://127.0.0.1:3000"}/stream-server`;
 
 export async function getSeriesSeasons(showboxId: string): Promise<{ shareKey: string; seasons: any[]; hasDirectFiles: boolean } | null> {
     try {
