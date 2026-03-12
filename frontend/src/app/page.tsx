@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import HeroBanner from "@/components/shared/HeroBanner";
 import FeaturesStrip from "@/components/home/FeaturesStrip";
 import ContentRow from "@/components/home/ContentRow";
@@ -14,55 +16,11 @@ import {
 } from "@/lib/services/showbox";
 import { mapShowboxToContent } from "@/lib/utils/showbox-mapper";
 import { cookies } from "next/headers";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
-import { db } from "@/lib/db";
 
 export default async function Home() {
   const cookieStore = await cookies();
   const isKidsMode = cookieStore.get("kids_mode")?.value === "true";
-  const session = await getServerSession(authOptions);
   let continueWatching: any[] = [];
-
-  if (session?.user) {
-    const history = await db.watchHistory.findMany({
-      where: { userId: (session.user as any).id },
-      include: {
-        movie: true,
-        episode: {
-          include: {
-            season: {
-              include: {
-                show: true
-              }
-            }
-          }
-        }
-      },
-      orderBy: { timestamp: "desc" },
-      take: 20
-    });
-
-    continueWatching = history.map(h => {
-      const item = h.movie || h.episode?.season.show;
-      if (!item) return null;
-
-      const isEpisode = !!h.episode;
-      const title = isEpisode
-        ? `${item.title} (S${h.episode!.season.seasonNumber}E${h.episode!.episodeNumber})`
-        : item.title;
-
-      return {
-        id: item.id,
-        title: title,
-        posterUrl: item.poster,
-        backdropUrl: item.backdrop || item.poster,
-        type: h.movie ? "movie" : "series",
-        progress: h.progress,
-        duration: isEpisode ? h.episode!.duration : (h.movie as any).duration * 60, // convert min to sec for movies
-      };
-    }).filter(Boolean);
-  }
 
   // Fetch all categorized data in parallel for maximum speed
   const [

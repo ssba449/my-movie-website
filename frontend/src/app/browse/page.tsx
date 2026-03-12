@@ -1,6 +1,5 @@
-import { redirect } from "next/navigation";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
+export const dynamic = 'force-dynamic';
+
 import HeroBanner from "@/components/shared/HeroBanner";
 import ContentRow from "@/components/home/ContentRow";
 import {
@@ -29,11 +28,6 @@ function mapShowboxToContent(items: any[], typeFallback: "movie" | "series" = "m
 }
 
 export default async function Browse() {
-    const session = await getServerSession(authOptions);
-
-    if (!session) {
-        redirect("/sign-in");
-    }
 
     const [
         rawTrendingAll,

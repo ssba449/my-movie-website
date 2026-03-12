@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import Image from "next/image";
 import { Play, Plus, Star, Share2, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,11 +10,6 @@ import WatchButton from "./WatchButton";
 import Link from "next/link";
 import TitleTabsManager from "@/components/detail/TitleTabsManager";
 import TitleStickyHeader from "@/components/detail/TitleStickyHeader";
-import WatchlistButton from "./WatchlistButton";
-import PremiumAccessOverlay from "@/components/shared/PremiumAccessOverlay";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
-import { db } from "@/lib/db";
 import ShowboxPlayer from "@/components/shared/ShowboxPlayer";
 
 // Helper for mapping "more like this"
@@ -36,9 +33,8 @@ export default async function TitleDetail({
     params: { id: string },
     searchParams: { [key: string]: string | string[] | undefined }
 }) {
-    const session = await getServerSession(authOptions);
-    const isLoggedIn = !!session?.user;
-    const userId = (session?.user as any)?.id;
+    const isLoggedIn = false;
+    const userId = null;
 
     // Next.js versions can sometimes wrap params in a promise or pass directly.
     const resolvedParams = await params;
@@ -57,24 +53,12 @@ export default async function TitleDetail({
 
     // Check if in watchlist
     let isFavorite = false;
-    if (isLoggedIn && userId) {
-        const watchlistEntry = await db.watchlist.findFirst({
-            where: {
-                userId: userId,
-                OR: [
-                    { movieId: content.id },
-                    { showId: content.id }
-                ]
-            }
-        });
-        isFavorite = !!watchlistEntry;
-    }
 
     const rawMore = await getShowboxTrending("all", 10);
     const moreLikeThis = mapShowboxToContent(rawMore?.list || rawMore);
 
-    const userPlan = (session?.user as any)?.plan || "Free";
-    const isLocked = content.isPremium && userPlan !== "StreamVault+";
+    const userPlan = "StreamVault+"; // Default to premium since auth is removed
+    const isLocked = false;
 
     // Placeholder for series specific state, assuming these would be passed or derived
     const isSeries = content.type === "series";
@@ -155,13 +139,6 @@ export default async function TitleDetail({
 
                             <div className="flex flex-wrap items-center gap-4 mb-10">
                                 <WatchButton content={content} />
-
-                                <WatchlistButton
-                                    contentId={content.id}
-                                    type={content.type as "movie" | "series"}
-                                    initialIsFavorite={isFavorite}
-                                    isLoggedIn={isLoggedIn}
-                                />
 
                                 <Button size="lg" variant="ghost" className="h-[52px] w-[52px] p-0 rounded-full bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.12)] text-white hover:bg-[rgba(255,255,255,0.2)] transition-transform hover:scale-105 active:scale-95 duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]">
                                     <Share2 className="w-5 h-5" />

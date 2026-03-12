@@ -1,5 +1,3 @@
-import { db } from "../db";
-
 const API_BASE = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
 export const SHOWBOX_API_URL = `${API_BASE}/api`;
 const STREAM_SERVER = `${API_BASE}/stream-server`;
@@ -52,67 +50,12 @@ export async function searchShowbox(query: string, type: "movie" | "tv" | "all" 
     const queryParam = query ? `&title=${encodeURIComponent(query)}` : "";
     const lowerQuery = query.toLowerCase().trim();
 
-    // 1. Fetch from Local Database
-    let dbMovies: any[] = [];
-    let dbShows: any[] = [];
-
-    if (type === "movie" || type === "all") {
-        dbMovies = await db.movie.findMany({
-            where: { title: { contains: query } },
-            take: limit,
-        });
-    }
-
-    if (type === "tv" || type === "all") {
-        dbShows = await db.show.findMany({
-            where: { title: { contains: query } },
-            take: limit,
-        });
-    }
-
-    // Convert DB items to Showbox-like format for the mapper
-    const localResults = [
-        ...dbMovies.map(m => ({
-            ...m,
-            id: m.id,
-            box_type: 1,
-            poster: m.poster,
-            banner_mini: m.backdrop, // Map backdrop to banner_mini for the mapper
-            rating: m.imdbRating || "0",
-            year: m.releaseYear,
-        })),
-        ...dbShows.map(s => ({
-            ...s,
-            id: s.id,
-            box_type: 2,
-            poster: s.poster,
-            banner_mini: s.backdrop,
-            rating: s.imdbRating || "0",
-            year: s.releaseYear,
-        }))
-    ];
-
-    // 2. Fetch from External API
+    // Fetch from External API
     const data = await safeFetchJson(`${SHOWBOX_API_URL}/search?type=${type}&page=${page}&pagelimit=${limit}${queryParam}`);
     const apiResults = data?.list || (Array.isArray(data) ? data : []);
 
-    // 3. Deduplicate by TMDB ID
-    const localTmdbIds = new Set(
-        [...dbMovies, ...dbShows]
-            .map(item => item.tmdbId?.toString())
-            .filter(Boolean)
-    );
-
-    const filteredApiResults = apiResults.filter((item: any) => {
-        const tmdbId = (item.tmdb_id || item.mb_id)?.toString();
-        return !tmdbId || !localTmdbIds.has(tmdbId);
-    });
-
-    // 4. Combine and Prioritize
-    const combined = [...localResults, ...filteredApiResults];
-
     // Intelligent Sorting
-    const sorted = combined.sort((a, b) => {
+    const sorted = apiResults.sort((a: any, b: any) => {
         const titleA = (a.title || a.display_title || "").toLowerCase().trim();
         const titleB = (b.title || b.display_title || "").toLowerCase().trim();
 
@@ -122,13 +65,7 @@ export async function searchShowbox(query: string, type: "movie" | "tv" | "all" 
         if (exactA && !exactB) return -1;
         if (!exactA && exactB) return 1;
 
-        // Priority 2: Local DB items
-        const isLocalA = typeof a.id === "string" && a.id.length > 20; // UUID-like
-        const isLocalB = typeof b.id === "string" && b.id.length > 20;
-        if (isLocalA && !isLocalB) return -1;
-        if (!isLocalA && isLocalB) return 1;
-
-        // Priority 3: Starts with query
+        // Priority 2: Starts with query
         const startsA = titleA.startsWith(lowerQuery);
         const startsB = titleB.startsWith(lowerQuery);
         if (startsA && !startsB) return -1;
@@ -196,61 +133,6 @@ export async function getShowboxShowDetails(id: string) {
 }
 
 export async function getNormalizedShowboxContent(id: string, typeHint?: "movie" | "series" | "tv") {
-    const isUUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id);
-
-    if (isUUID) {
-        // Try fetching from database
-        const dbMovie = await db.movie.findUnique({ where: { id } }) as any;
-        if (dbMovie) {
-            return {
-                id: dbMovie.id,
-                type: "movie",
-                title: dbMovie.title,
-                description: dbMovie.description || "No description available.",
-                posterUrl: dbMovie.poster,
-                backdropUrl: dbMovie.backdrop || dbMovie.poster,
-                releaseYear: dbMovie.releaseYear || "",
-                runtime: dbMovie.duration || 0,
-                imdbRating: 0,
-                genre: dbMovie.genre || "Entertainment",
-                episodes: undefined,
-                cast: "",
-                status: "available",
-                trailerUrl: dbMovie.trailerUrl || "",
-                tmdbId: dbMovie.tmdbId,
-                isPremium: dbMovie.isPremium,
-                contentRating: dbMovie.contentRating,
-                createdAt: dbMovie.createdAt,
-                updatedAt: dbMovie.updatedAt
-            };
-        }
-
-        const dbShow = await db.show.findUnique({ where: { id } }) as any;
-        if (dbShow) {
-            return {
-                id: dbShow.id,
-                type: "series",
-                title: dbShow.title,
-                description: dbShow.description || "No description available.",
-                posterUrl: dbShow.poster,
-                backdropUrl: dbShow.backdrop || dbShow.poster,
-                releaseYear: dbShow.releaseYear || "",
-                runtime: 0,
-                imdbRating: 0,
-                genre: dbShow.genre || "Entertainment",
-                episodes: [],
-                cast: "",
-                status: "available",
-                trailerUrl: "",
-                tmdbId: dbShow.tmdbId,
-                isPremium: dbShow.isPremium,
-                contentRating: dbShow.contentRating,
-                createdAt: dbShow.createdAt,
-                updatedAt: dbShow.updatedAt
-            };
-        }
-    }
-
     let raw;
     let type: "movie" | "series" = "movie";
 

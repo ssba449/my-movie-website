@@ -1,14 +1,9 @@
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
-import { redirect } from "next/navigation";
+export const dynamic = 'force-dynamic';
+
 import LoadMoreGrid from "@/components/shared/LoadMoreGrid";
 import { getShowboxTrending } from "@/lib/services/showbox";
 
 export default async function SeriesPage() {
-    const session = await getServerSession(authOptions);
-    if (!session || !session.user || !(session.user as any).id) {
-        redirect("/sign-in");
-    }
 
     const rawSeries = await getShowboxTrending("tv", 60);
     const series = rawSeries?.list || rawSeries || [];

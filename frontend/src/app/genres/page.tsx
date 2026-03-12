@@ -1,6 +1,9 @@
+export const dynamic = 'force-dynamic';
+
 import Image from "next/image";
 import Link from "next/link";
-import { db } from "@/lib/db";
+import { searchShowbox } from "@/lib/services/showbox";
+import { mapShowboxToContent } from "@/lib/utils/showbox-mapper";
 import { Star } from "lucide-react";
 
 export default async function GenresPage({ searchParams }: { searchParams: Promise<{ genre?: string }> }) {
@@ -13,24 +16,8 @@ export default async function GenresPage({ searchParams }: { searchParams: Promi
         "Romance", "Thriller", "Documentary", "Fantasy", "Crime", "Adventure"
     ];
 
-    const movies = await db.movie.findMany({
-        where: {
-            genre: { contains: selectedGenre }
-        },
-        take: 20
-    });
-
-    const shows = await db.show.findMany({
-        where: {
-            genre: { contains: selectedGenre }
-        },
-        take: 20
-    });
-
-    const content = [
-        ...movies.map(m => ({ ...m, type: 'movie' })),
-        ...shows.map(s => ({ ...s, type: 'series' }))
-    ];
+    const rawData = await searchShowbox(selectedGenre, "all", 1, 40);
+    const content = mapShowboxToContent(rawData?.list || rawData);
 
     return (
         <div className="bg-[#0B0B0F] min-h-screen pt-24 pb-32">
@@ -56,7 +43,7 @@ export default async function GenresPage({ searchParams }: { searchParams: Promi
                     {content.map((item) => (
                         <Link href={`/title/${item.id}`} key={item.id} className="group relative block rounded-2xl overflow-hidden aspect-[2/3] bg-white/5 border border-white/10 transition-transform duration-500 hover:scale-105 hover:z-10 hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
                             <Image
-                                src={item.poster || "https://images.unsplash.com/photo-1536440136628-849c177e76a1"}
+                                src={item.posterUrl || "https://images.unsplash.com/photo-1536440136628-849c177e76a1"}
                                 alt={item.title}
                                 fill
                                 className="object-cover transition-opacity duration-500 group-hover:opacity-75"

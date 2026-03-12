@@ -10,10 +10,18 @@ export default function RecommendationsRow() {
     useEffect(() => {
         const fetchRecs = async () => {
             try {
-                const res = await fetch("/api/content/recommendations");
+                const apiBase = (process.env.NEXT_PUBLIC_API_BASE || "https://my-movie-website.onrender.com").replace(/\/$/, "");
+                // Use Trending as a fallback since specific recommendations require user history
+                const res = await fetch(`${apiBase}/api/search?type=all&page=1&pagelimit=15&title=2024`);
                 if (res.ok) {
                     const json = await res.json();
-                    setData(json);
+                    const items = (json.list || json).map((m: any) => ({
+                        id: m.id,
+                        title: m.title || m.display_title,
+                        posterUrl: m.poster || m.poster_min,
+                        type: m.box_type === 1 ? "movie" : "series"
+                    }));
+                    setData({ title: "Recommended for You", items });
                 }
             } catch (e) {
                 console.error("Failed to fetch recommendations", e);

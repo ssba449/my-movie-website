@@ -1,13 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Search, Bell, Menu, LogOut, User, Database, X } from "lucide-react";
+import { Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { useSession, signOut } from "next-auth/react";
+import Link from "next/link";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -22,7 +20,6 @@ export default function NavBar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
-    const { data: session, status } = useSession();
     const router = useRouter();
 
     const handleSearch = (e: React.FormEvent) => {
@@ -113,67 +110,14 @@ export default function NavBar() {
 
                 {/* Right: Actions & Profile */}
                 <div className="flex items-center gap-6">
-                    {status === "authenticated" ? (
-                        <>
-                            {(session?.user as any)?.plan !== "StreamVault+" && (
-                                <Link href="/checkout" className="hidden lg:block pointer-events-auto">
-                                    <Button className="bg-[#FF3B30] text-white hover:bg-[#D70015] rounded-full px-5 h-[36px] text-[13px] font-bold tracking-wide shadow-[0_4px_14px_rgba(255,59,48,0.4)] transition-transform hover:scale-105 active:scale-95">
-                                        Get StreamVault+
-                                    </Button>
-                                </Link>
-                            )}
-
-                            <Button variant="ghost" size="icon" className="text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors relative pointer-events-auto">
-                                <Bell className="w-5 h-5" />
-                                <span className="absolute top-1.5 right-2 w-2 h-2 bg-[#FF3B30] rounded-full shadow-[0_0_8px_rgba(255,59,48,0.8)]"></span>
-                            </Button>
-
-                            <DropdownMenu>
-                                <DropdownMenuTrigger asChild>
-                                    <Avatar className="w-8 h-8 cursor-pointer ring-1 ring-white/20 hover:ring-white transition-all shadow-[0_20px_60px_rgba(0,0,0,0.35)] pointer-events-auto">
-                                        <AvatarImage src={session.user?.image || ""} />
-                                        <AvatarFallback className="bg-[rgba(255,255,255,0.1)] text-white text-xs backdrop-blur-md">
-                                            {session.user?.name?.charAt(0) || "U"}
-                                        </AvatarFallback>
-                                    </Avatar>
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent align="end" className="w-56 bg-[rgba(255,255,255,0.08)] backdrop-blur-[40px] border-[rgba(255,255,255,0.12)] text-white rounded-[16px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] p-2 pointer-events-auto">
-                                    <DropdownMenuLabel className="px-2 py-1.5 text-xs font-semibold text-white/50 uppercase tracking-wider">Account</DropdownMenuLabel>
-                                    <DropdownMenuItem asChild className="cursor-pointer rounded-[12px] hover:bg-white/10 focus:bg-white/10 px-3 py-2 transition-colors">
-                                        <Link href="/profile"><User className="mr-3 h-4 w-4 opacity-70" />Profile</Link>
-                                    </DropdownMenuItem>
-
-                                    {(session.user as any)?.role === "ADMIN" && (
-                                        <DropdownMenuItem
-                                            className="cursor-pointer rounded-[12px] hover:bg-white/10 focus:bg-white/10 px-3 py-2 transition-colors flex items-center"
-                                            onClick={() => router.push("/admin/dashboard")}
-                                        >
-                                            <Database className="mr-3 h-4 w-4 opacity-70" />
-                                            Admin Dashboard
-                                        </DropdownMenuItem>
-                                    )}
-                                    <DropdownMenuSeparator className="bg-[rgba(255,255,255,0.1)] my-1" />
-                                    <div className="px-3 py-2">
-                                        <KidsModeToggle />
-                                    </div>
-                                    <DropdownMenuSeparator className="bg-[rgba(255,255,255,0.1)] my-1" />
-                                    <DropdownMenuItem className="cursor-pointer rounded-[12px] hover:bg-[#FF3B30]/20 focus:bg-[#FF3B30]/20 text-[#FF3B30] px-3 py-2 transition-colors" onClick={() => signOut()}>
-                                        <LogOut className="mr-3 h-4 w-4" />
-                                        Log Out
-                                    </DropdownMenuItem>
-                                </DropdownMenuContent>
-                            </DropdownMenu>
-                        </>
-                    ) : (
-                        <div className="flex items-center gap-4 pointer-events-auto">
-                            <Link href="/sign-in">
-                                <Button variant="ghost" className="text-white hover:bg-white/10 rounded-full px-6 text-[14px] font-semibold tracking-wide">Sign In</Button>
-                            </Link>
-                            <Link href="/checkout">
-                                <Button className="bg-[#FF3B30] text-white hover:bg-[#D70015] rounded-full px-6 h-[40px] text-[14px] font-bold tracking-wide shadow-[0_4px_14px_rgba(255,59,48,0.4)] transition-transform hover:scale-105 active:scale-95">Get StreamVault+</Button>
-                            </Link>
-                        </div>
-                    )}
+                    <div className="flex items-center gap-4 pointer-events-auto">
+                        <Link href="/sign-in">
+                            <Button variant="ghost" className="text-white hover:bg-white/10 rounded-full px-6 text-[14px] font-semibold tracking-wide">Sign In</Button>
+                        </Link>
+                        <Link href="/checkout">
+                            <Button className="bg-[#FF3B30] text-white hover:bg-[#D70015] rounded-full px-6 h-[40px] text-[14px] font-bold tracking-wide shadow-[0_4px_14px_rgba(255,59,48,0.4)] transition-transform hover:scale-105 active:scale-95">Get StreamVault+</Button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </nav>
