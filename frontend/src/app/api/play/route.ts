@@ -12,7 +12,8 @@ export async function GET(req: NextRequest) {
     }
 
     try {
-        const backendUrl = `http://127.0.0.1:4000/api/play?id=${id}&type=${type}`;
+        const backendBase = process.env.BACKEND_URL || "http://127.0.0.1:3000";
+        const backendUrl = `${backendBase}/stream-server/api/play?id=${id}&type=${type}`;
 
         const backendResponse = await fetch(backendUrl, {
             cache: "no-store",

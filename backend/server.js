@@ -27,10 +27,11 @@ const streamProcess = spawn('node', ['server.js'], {
     env: { ...process.env, PORT: STREAM_PORT }
 });
 
-const streamProxyOpts = { target: `http://127.0.0.1:${STREAM_PORT}`, changeOrigin: true };
+const streamProxyOpts = { target: `http://127.0.0.1:${STREAM_PORT}`, changeOrigin: true, pathRewrite: { '^/stream-server': '' } };
 const showboxProxyOpts = { target: `http://127.0.0.1:${API_PORT}`, changeOrigin: true };
 
 // Proxy rules
+app.use('/stream-server', createProxyMiddleware(streamProxyOpts));
 app.use('/stream', createProxyMiddleware(streamProxyOpts));
 app.use('/api/play', createProxyMiddleware(streamProxyOpts));
 app.use('/api', createProxyMiddleware(showboxProxyOpts));

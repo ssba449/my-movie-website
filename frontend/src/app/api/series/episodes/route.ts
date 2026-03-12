@@ -8,7 +8,8 @@ export async function GET(req: NextRequest) {
     if (!shareKey || !seasonFid) return NextResponse.json({ error: "Missing shareKey or seasonFid" }, { status: 400 });
 
     try {
-        const res = await fetch(`http://127.0.0.1:4000/api/series/episodes?shareKey=${shareKey}&seasonFid=${seasonFid}`, { cache: "no-store" });
+        const backendUrl = process.env.BACKEND_URL || "http://127.0.0.1:3000";
+        const res = await fetch(`${backendUrl}/stream-server/api/series/episodes?shareKey=${shareKey}&seasonFid=${seasonFid}`, { cache: "no-store" });
         const data = await res.json();
         return NextResponse.json(data);
     } catch (e: any) {
