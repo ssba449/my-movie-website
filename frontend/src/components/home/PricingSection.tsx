@@ -61,7 +61,7 @@ export default function PricingSection({ onSubscribe, isLoading }: PricingSectio
                         </Button>
                     </div>
 
-                    {/* Tier 2: StreamVault+ ($3.99) */}
+                    {/* Tier 2: StreamVault+ */}
                     <div className="flex-1 bg-[rgba(255,255,255,0.12)] backdrop-blur-[40px] rounded-[32px] p-10 md:p-14 border border-[rgba(255,255,255,0.2)] shadow-[0_30px_80px_rgba(0,0,0,0.5)] flex flex-col justify-between relative transition-transform duration-700 md:hover:scale-[1.04] md:scale-[1.02] z-10 hover:z-20">
                         {/* Premium Badge */}
                         <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-black text-[12px] font-bold uppercase tracking-widest px-6 py-2 rounded-full shadow-[0_10px_30px_rgba(255,255,255,0.3)]">

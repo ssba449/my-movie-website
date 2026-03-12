@@ -80,9 +80,12 @@ export async function searchShowbox(query: string, type: "movie" | "tv" | "all" 
 }
 
 export async function getShowboxTrending(type: "movie" | "tv" | "all" = "all", limit: number = 20) {
-    // Showbox Search5 fails if keyword is empty. Search current year to simulate a trending list reliably.
-    const year = new Date().getFullYear().toString();
-    return await searchShowbox(year, type, 1, limit);
+    if (type === "all") {
+        const homeData = await getShowboxHomeList();
+        // Return a flattened list from home sections if possible, or fallback to movie list
+        return homeData?.list?.[0]?.list || await getShowboxList("movie", "release_date", 1, limit);
+    }
+    return await getShowboxList(type === "tv" ? "tv" : "movie", "release_date", 1, limit);
 }
 
 // ── Categorized content fetchers ──────────────────────────────────
@@ -98,15 +101,11 @@ export async function getShowboxList(type: string = "movie", sort: string = "rel
 }
 
 export async function getShowboxTrendingMovies(limit: number = 20) {
-    // Trending movies — search current year for movies only
-    const year = "2024"; // Use a slightly older year to ensure abundant data
-    return await searchShowbox(year, "movie", 1, limit);
+    return await getShowboxList("movie", "release_date", 1, limit);
 }
 
 export async function getShowboxTrendingTVShows(limit: number = 20) {
-    // Trending TV shows — search current year for TV only
-    const year = "2024";
-    return await searchShowbox(year, "tv", 1, limit);
+    return await getShowboxList("tv", "release_date", 1, limit);
 }
 
 export async function getShowboxHotTVThisWeek(limit: number = 20) {
@@ -120,8 +119,7 @@ export async function getShowboxLatestTV(limit: number = 20) {
 }
 
 export async function getShowboxIMDBTopMovies(limit: number = 20) {
-    // IMDB top-rated movies — search popular critically-acclaimed keywords
-    return await searchShowbox("the", "movie", 1, limit);
+    return await getShowboxList("movie", "imdb_rating", 1, limit);
 }
 
 export async function getShowboxMovieDetails(id: string) {
